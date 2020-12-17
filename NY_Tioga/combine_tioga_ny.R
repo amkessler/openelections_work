@@ -146,10 +146,16 @@ combined_long <- combined_long %>%
   ) %>% 
   select(county, everything())
 
+#standardize write-in phrasing to match openelex
+combined_long <- combined_long %>% 
+  mutate(
+    candidate = str_replace_all(candidate, "WriteIn", "Write-Ins")
+  )
+
 combined_long
 
 
 ### EXPORT RESULTS ####
 
 #use openelex naming convention
-write_csv(combined_long, "NY_Tioga/20201103__ny__general__tioga__precinct.csv")
+write_csv(combined_long, "NY_Tioga/20201103__ny__general__tioga__precinct.csv", na = "")
