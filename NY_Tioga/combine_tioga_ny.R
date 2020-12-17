@@ -34,6 +34,31 @@ head(presidential_long)
 
 
 
+## CONGRESSIONAL DISTRICT 22 ####
+cd22 <- read_excel("NY_Tioga/Tioga_NY_cleaned.xlsx", 
+                   sheet = "congress_NY-22")
+
+#convert to long (tidy) format
+cd22_long <- cd22 %>% 
+  pivot_longer(cols = 2:10, names_to = "name", values_to = "votes")
+
+#break out party affiliation and create race-specific values
+cd22_long <- cd22_long %>% 
+  mutate(
+    temp = str_split(name, " - ", simplify = TRUE),
+    candidate = temp[, 1],
+    party = temp[, 2],
+    office = "U.S. House",
+    district = "23",
+    unofficial = "X" ## **added here because currently these results are not yet official (being contested)
+  ) %>%
+  select(
+    precinct, office, district, candidate, party, votes, unofficial
+  ) 
+
+head(cd22_long)
+
+
 
 ## CONGRESSIONAL DISTRICT 23 ####
 cd23 <- read_excel("NY_Tioga/Tioga_NY_cleaned.xlsx", 
@@ -109,3 +134,22 @@ head(statehou124_long)
 
 
 
+### COMBINE INTO ONE #####
+
+#combine tidy datasets created above 
+combined_long <- bind_rows(presidential_long, cd22_long, cd23_long, statesen52_long, statehou124_long)
+
+#add county name column 
+combined_long <- combined_long %>% 
+  mutate(
+    county = "Tioga"
+  ) %>% 
+  select(county, everything())
+
+combined_long
+
+
+### EXPORT RESULTS ####
+
+#use openelex naming convention
+write_csv(combined_long, "NY_Tioga/20201103__ny__general__tioga__precinct.csv")
