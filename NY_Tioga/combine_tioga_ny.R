@@ -13,8 +13,21 @@ presidential
 
 #convert to long (tidy) format
 presidential_long <- presidential %>% 
-  pivot_longer(cols = 2:11, names_to = "office", values_to = "votes")
+  pivot_longer(cols = 2:11, names_to = "name", values_to = "votes")
 
 presidential_long
 
+#break out party affiliation and create race-specific values
+presidential_long <- presidential_long %>% 
+  mutate(
+    temp = str_split(name, " - ", simplify = TRUE),
+    candidate = temp[, 1],
+    party = temp[, 2],
+    office = "President",
+    district = ""
+  ) %>%
+  select(
+    precinct, office, district, candidate, party, votes
+  ) 
 
+head(presidential_long)
