@@ -3,6 +3,8 @@ library(janitor)
 library(readxl)
 
 
+# BUILD FUNCTION ####
+
 ### We'll create a function to handle the repetitive part of the processing
 # once the initial excel cleanup steps are taken. The file will have a precinct column,
 # followed by columns with vote results with names formatted as "candidate - party"
@@ -23,7 +25,8 @@ process_ny_data <- function(df, office, district){
       candidate = temp[, 1],
       party = temp[, 2],
       office = office,
-      district = district
+      district = district,
+      candidate = str_replace_all(candidate, "WriteIn", "Write-Ins") #standarize with openelex name
     ) %>%
     #reorder columns to match openelex format
     select(
@@ -33,154 +36,87 @@ process_ny_data <- function(df, office, district){
   return(df)
 }
 
-## PRESIDENTIAL ####
+
+## PROCESS DATA FILES ####
+
+# presidential ####
+
+#import excel file
 presidential <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                            sheet = "presidential")
-
 presidential
 
-process_ny_data(presidential, "President", "")
+#run processing function 
+processed_prez <- process_ny_data(presidential, "President", "")
+processed_prez
 
 
+## Congressional - District 19 ####
 
-
-
-
-## CONGRESSIONAL DISTRICT 19 ####
+#import
 cd19 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                    sheet = "congress_NY-19")
+cd19
 
-#convert to long (tidy) format
-cd19_long <- cd19 %>% 
-  pivot_longer(cols = 2:8, names_to = "name", values_to = "votes")
-
-#break out party affiliation and create race-specific values
-cd19_long <- cd19_long %>% 
-  mutate(
-    temp = str_split(name, " - ", simplify = TRUE),
-    candidate = temp[, 1],
-    party = temp[, 2],
-    office = "U.S. House",
-    district = "19"
-  ) %>%
-  select(
-    precinct, office, district, candidate, party, votes
-  ) 
-
-head(cd19_long)
-
-#run processing function
-process_long_ny_data(presidential_long, "President", "")
+#process
+processed_cd19 <- process_ny_data(cd19, "U.S. House", "19")
+processed_cd19
 
 
-
-
-
-
-## STATE SENATE 42 ####
+## State Senate 42 ####
 statesen42 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                    sheet = "statesen-42")
 
-#convert to long (tidy) format
-statesen42_long <- statesen42 %>% 
-  pivot_longer(cols = 2:8, names_to = "name", values_to = "votes")
-
-#break out party affiliation and create race-specific values
-statesen42_long <- statesen42_long %>% 
-  mutate(
-    temp = str_split(name, " - ", simplify = TRUE),
-    candidate = temp[, 1],
-    party = temp[, 2],
-    office = "State Senate",
-    district = "42"
-  ) %>%
-  select(
-    precinct, office, district, candidate, party, votes
-  ) 
-
-head(statesen42_long)
+processed_statesen42 <- process_ny_data(statesen42, "State Senate", "42")
+processed_statesen42
 
 
-
-## STATE HOUSE 100 ####
+## State House 100 ####
 statehou100 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                          sheet = "statehou-100")
+statehou100
 
-#convert to long (tidy) format
-statehou100_long <- statehou100 %>% 
-  pivot_longer(cols = 2:5, names_to = "name", values_to = "votes")
-
-#break out party affiliation and create race-specific values
-statehou100_long <- statehou100_long %>% 
-  mutate(
-    temp = str_split(name, " - ", simplify = TRUE),
-    candidate = temp[, 1],
-    party = temp[, 2],
-    office = "State Assembly",
-    district = "100"
-  ) %>%
-  select(
-    precinct, office, district, candidate, party, votes
-  ) 
-
-head(statehou100_long)
+processed_statehou100 <- process_ny_data(statehou100, "State Assembly", "100")
+processed_statehou100
 
 
-## STATE ASSEMBLY 101 ####
+## State House 101 ####
 statehou101 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                           sheet = "statehou-101")
+statehou101
 
-#convert to long (tidy) format
-statehou101_long <- statehou101 %>% 
-  pivot_longer(cols = 2:8, names_to = "name", values_to = "votes")
-
-#break out party affiliation and create race-specific values
-statehou101_long <- statehou101_long %>% 
-  mutate(
-    temp = str_split(name, " - ", simplify = TRUE),
-    candidate = temp[, 1],
-    party = temp[, 2],
-    office = "State Assembly",
-    district = "101"
-  ) %>%
-  select(
-    precinct, office, district, candidate, party, votes
-  ) 
-
-head(statehou101_long)
-
+processed_statehou101 <- process_ny_data(statehou101, "State Assembly", "101")
+processed_statehou101
 
 
 ### COMBINE INTO ONE #####
 
-#combine tidy datasets created above 
-combined_long <- bind_rows(presidential_long, cd19_long, statesen42_long, statehou100_long, statehou101_long)
-
-#check parties
-combined_long %>% 
-  count(party)
-
-#check districts
-combined_long %>% 
-  count(district)
+#combine tidy/long datasets created above 
+processed_combined <- bind_rows(processed_prez, 
+                                processed_cd19, 
+                                processed_statesen42, 
+                                processed_statehou100, 
+                                processed_statehou101)
 
 #add county name column 
-combined_long <- combined_long %>% 
+processed_combined <- processed_combined %>% 
   mutate(
     county = "Sullivan"
   ) %>% 
   select(county, everything())
 
-#standardize write-in phrasing to match openelex
-combined_long <- combined_long %>% 
-  mutate(
-    candidate = str_replace_all(candidate, "WriteIn", "Write-Ins")
-  )
+processed_combined
 
-combined_long
+#check parties
+processed_combined %>% 
+  count(party)
+
+#check districts
+processed_combined %>% 
+  count(district)
 
 
 ### EXPORT RESULTS ####
 
 #use openelex naming convention
-write_csv(combined_long, "NY_Sullivan/20201103__ny__general__sullivan__precinct.csv", na = "")
+write_csv(processed_combined, "NY_Sullivan/20201103__ny__general__sullivan__precinct.csv", na = "")
