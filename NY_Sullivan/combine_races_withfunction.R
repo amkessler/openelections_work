@@ -2,7 +2,22 @@ library(tidyverse)
 library(janitor)
 library(readxl)
 
-### Bringing in and transforming to long for each race
+### We'll create a function to handle the repetitive part of the processing
+#once the long/tidy dataset is created (since each race can have different numbers of cands)
+process_long_ny_data <- function(df, office, district){
+  df <- df %>% 
+    mutate(
+      temp = str_split(name, " - ", simplify = TRUE),
+      candidate = temp[, 1],
+      party = temp[, 2],
+      office = office,
+      district = district
+    ) %>%
+    select(
+      precinct, office, district, candidate, party, votes
+    ) 
+  return(df)
+}
 
 
 ## PRESIDENTIAL ####
@@ -16,21 +31,6 @@ presidential_long <- presidential %>%
   pivot_longer(cols = 2:9, names_to = "name", values_to = "votes")
 
 presidential_long
-
-#break out party affiliation and create race-specific values
-presidential_long <- presidential_long %>% 
-  mutate(
-    temp = str_split(name, " - ", simplify = TRUE),
-    candidate = temp[, 1],
-    party = temp[, 2],
-    office = "President",
-    district = ""
-  ) %>%
-  select(
-    precinct, office, district, candidate, party, votes
-  ) 
-
-head(presidential_long)
 
 
 
@@ -56,6 +56,9 @@ cd19_long <- cd19_long %>%
   ) 
 
 head(cd19_long)
+
+#run processing function
+process_long_ny_data(presidential_long, "President", "")
 
 
 
