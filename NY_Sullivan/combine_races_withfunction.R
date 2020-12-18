@@ -98,7 +98,7 @@ processed_combined <- bind_rows(processed_prez,
                                 processed_statehou100, 
                                 processed_statehou101)
 
-#add county name column 
+#add county name for all records 
 processed_combined <- processed_combined %>% 
   mutate(
     county = "Sullivan"
