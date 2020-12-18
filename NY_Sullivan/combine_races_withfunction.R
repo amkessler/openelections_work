@@ -2,10 +2,19 @@ library(tidyverse)
 library(janitor)
 library(readxl)
 
+
 ### We'll create a function to handle the repetitive part of the processing
-#once the long/tidy dataset is created (since each race can have different numbers of cands)
-process_long_ny_data <- function(df, office, district){
+# once the initial excel cleanup steps are taken. The file will have a precinct column,
+# followed by columns with vote results formatted as "candidate - party"
+
+# Function wants:
+# - colnum: number of columns in the dataset; different races have diff number of candidates
+# - office: text label for office (e.g. "U.S. House")
+# - district: text label for district (e.g. "42")
+                                 
+process_ny_data <- function(df, colnum, office, district){
   df <- df %>% 
+    pivot_longer(cols = 2:all_of(colnum), names_to = "name", values_to = "votes") %>% 
     mutate(
       temp = str_split(name, " - ", simplify = TRUE),
       candidate = temp[, 1],
@@ -19,16 +28,17 @@ process_long_ny_data <- function(df, office, district){
   return(df)
 }
 
-
 ## PRESIDENTIAL ####
 presidential <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
                            sheet = "presidential")
 
 presidential
 
+process_ny_data(presidential, 9, "President", "")
+
 #convert to long (tidy) format
 presidential_long <- presidential %>% 
-  pivot_longer(cols = 2:9, names_to = "name", values_to = "votes")
+  pivot_longer(cols = 2:all_of(colnum), names_to = "name", values_to = "votes")
 
 presidential_long
 
@@ -59,6 +69,9 @@ head(cd19_long)
 
 #run processing function
 process_long_ny_data(presidential_long, "President", "")
+
+
+
 
 
 
