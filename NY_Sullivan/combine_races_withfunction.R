@@ -5,16 +5,19 @@ library(readxl)
 
 ### We'll create a function to handle the repetitive part of the processing
 # once the initial excel cleanup steps are taken. The file will have a precinct column,
-# followed by columns with vote results formatted as "candidate - party"
-
+# followed by columns with vote results with names formatted as "candidate - party"
 # Function wants:
-# - colnum: number of columns in the dataset; different races have diff number of candidates
 # - office: text label for office (e.g. "U.S. House")
 # - district: text label for district (e.g. "42")
                                  
-process_ny_data <- function(df, colnum, office, district){
+process_ny_data <- function(df, office, district){
+  #determine how many columns, since races can have diff number of candidates
+  colnum <- length(colnames(df))  
+  #begin processing dataset
   df <- df %>% 
+    #transform to long/tidy format
     pivot_longer(cols = 2:all_of(colnum), names_to = "name", values_to = "votes") %>% 
+    #clean and add necessary columns
     mutate(
       temp = str_split(name, " - ", simplify = TRUE),
       candidate = temp[, 1],
@@ -22,9 +25,11 @@ process_ny_data <- function(df, colnum, office, district){
       office = office,
       district = district
     ) %>%
+    #reorder columns to match openelex format
     select(
       precinct, office, district, candidate, party, votes
     ) 
+  #return results
   return(df)
 }
 
@@ -34,13 +39,10 @@ presidential <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx",
 
 presidential
 
-process_ny_data(presidential, 9, "President", "")
+process_ny_data(presidential, "President", "")
 
-#convert to long (tidy) format
-presidential_long <- presidential %>% 
-  pivot_longer(cols = 2:all_of(colnum), names_to = "name", values_to = "votes")
 
-presidential_long
+
 
 
 
