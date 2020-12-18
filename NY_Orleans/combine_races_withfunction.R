@@ -42,7 +42,7 @@ process_ny_data <- function(df, office, district){
 # presidential ####
 
 #import excel file
-presidential <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
+presidential <- read_excel("NY_Orleans/NY_Orleans_GE20_cleaned.xlsx", 
                            sheet = "presidential")
 presidential
 
@@ -51,57 +51,57 @@ processed_prez <- process_ny_data(presidential, "President", "")
 processed_prez
 
 
-## Congressional - District 19 ####
+## Congressional - District 27 ####
 
 #import
-cd19 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
-                   sheet = "congress_NY-19")
-cd19
+cd27 <- read_excel("NY_Orleans/NY_Orleans_GE20_cleaned.xlsx", 
+                   sheet = "congress_NY-27")
+cd27
 
 #process
-processed_cd19 <- process_ny_data(cd19, "U.S. House", "19")
-processed_cd19
+processed_cd27 <- process_ny_data(cd27, "U.S. House", "27")
+processed_cd27
 
 
-## State Senate 42 ####
-statesen42 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
-                   sheet = "statesen-42")
+## State Senate 62 ####
+statesen62 <- read_excel("NY_Orleans/NY_Orleans_GE20_cleaned.xlsx", 
+                   sheet = "statesen-62")
 
-processed_statesen42 <- process_ny_data(statesen42, "State Senate", "42")
-processed_statesen42
-
-
-## State House 100 ####
-statehou100 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
-                         sheet = "statehou-100")
-statehou100
-
-processed_statehou100 <- process_ny_data(statehou100, "State Assembly", "100")
-processed_statehou100
+processed_statesen62 <- process_ny_data(statesen62, "State Senate", "62")
+processed_statesen62
 
 
-## State House 101 ####
-statehou101 <- read_excel("NY_Sullivan/Sullivan_NY_GE20_cleaned.xlsx", 
-                          sheet = "statehou-101")
-statehou101
+## State House 139 ####
+statehou139 <- read_excel("NY_Orleans/NY_Orleans_GE20_cleaned.xlsx", 
+                         sheet = "statehou-139")
+statehou139
 
-processed_statehou101 <- process_ny_data(statehou101, "State Assembly", "101")
-processed_statehou101
+processed_statehou139 <- process_ny_data(statehou139, "State Assembly", "139")
+processed_statehou139
+
+
+## State House 144 ####
+statehou144 <- read_excel("NY_Orleans/NY_Orleans_GE20_cleaned.xlsx", 
+                          sheet = "statehou-144")
+statehou144
+
+processed_statehou144 <- process_ny_data(statehou144, "State Assembly", "144")
+processed_statehou144
 
 
 ### COMBINE INTO ONE #####
 
 #combine tidy/long datasets created above 
 processed_combined <- bind_rows(processed_prez, 
-                                processed_cd19, 
-                                processed_statesen42, 
-                                processed_statehou100, 
-                                processed_statehou101)
+                                processed_cd27, 
+                                processed_statesen62, 
+                                processed_statehou139, 
+                                processed_statehou144)
 
 #add county name for all records 
 processed_combined <- processed_combined %>% 
   mutate(
-    county = "Sullivan"
+    county = "Orleans"
   ) %>% 
   select(county, everything())
 
@@ -119,4 +119,4 @@ processed_combined %>%
 ### EXPORT RESULTS ####
 
 #use openelex naming convention
-write_csv(processed_combined, "NY_Sullivan/20201103__ny__general__sullivan__precinct.csv", na = "")
+write_csv(processed_combined, "NY_Orleans/20201103__ny__general__orleans__precinct.csv", na = "")
