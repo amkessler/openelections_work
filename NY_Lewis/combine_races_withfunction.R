@@ -39,44 +39,28 @@ process_ny_data <- function(df, office, district){
 
 ## PROCESS DATA FILES ####
 
-# presidential ####
-
-#import excel file
-presidential <- read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", 
-                           sheet = "presidential")
-presidential
-
-#run processing function 
-processed_prez <- process_ny_data(presidential, "President", "")
+# Presidential ####
+#run import and processing function in one step 
+processed_prez <- process_ny_data(read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", sheet = "presidential"), 
+                                  "President", "")
 processed_prez
 
 
 ## Congressional - District 21 ####
-
-#import
-cd21 <- read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", 
-                   sheet = "cd21")
-cd21
-
-#process
-processed_cd21 <- process_ny_data(cd21, "U.S. House", "21")
+processed_cd21 <- process_ny_data(read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", sheet = "cd21"), 
+                                  "U.S. House", "21")
 processed_cd21
 
 
 ## State Senate 45 ####
-statesen45 <- read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", 
-                   sheet = "statesen45")
-
-processed_statesen45 <- process_ny_data(statesen45, "State Senate", "45")
+processed_statesen45 <- process_ny_data(read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", sheet = "statesen45"),
+                                        "State Senate", "45")
 processed_statesen45
 
 
 ## State House 114 ####
-statehou114 <- read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", 
-                         sheet = "statehou114")
-statehou114
-
-processed_statehou114 <- process_ny_data(statehou114, "State Assembly", "114")
+processed_statehou114 <- process_ny_data(read_excel("NY_Essex/Essex_NY_GE20_cleaned.xlsx", sheet = "statehou114"),
+                                         "State Assembly", "114")
 processed_statehou114
 
 
