@@ -96,6 +96,10 @@ processed_combined %>%
 processed_combined %>% 
   count(office, district)
 
+#check candidates
+processed_combined %>% 
+  count(candidate)
+
 
 ### EXPORT RESULTS ####
 
