@@ -104,4 +104,4 @@ processed_combined %>%
 ### EXPORT RESULTS ####
 
 #use openelex naming convention
-write_csv(processed_combined, "NY_Lewis/20201103__ny__general__wyoming__precinct.csv", na = "")
+write_csv(processed_combined, "NY_Wyoming/20201103__ny__general__wyoming__precinct.csv", na = "")
