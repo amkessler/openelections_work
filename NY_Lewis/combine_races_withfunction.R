@@ -1,6 +1,7 @@
 library(tidyverse)
 library(janitor)
 library(readxl)
+library(feather)
 
 
 # BUILD FUNCTION ####
@@ -105,3 +106,5 @@ processed_combined %>%
 
 #use openelex naming convention
 write_csv(processed_combined, "NY_Lewis/20201103__ny__general__lewis__precinct.csv", na = "")
+write_feather(processed_combined, "NY_Lewis/20201103__ny__general__lewis__precinct.feather")
+
