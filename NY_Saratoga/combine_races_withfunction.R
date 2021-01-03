@@ -123,6 +123,6 @@ processed_combined %>%
 ### EXPORT RESULTS ####
 
 #use openelex naming convention
-write_csv(processed_combined, "NY_Lewis/20201103__ny__general__saratoga__precinct.csv", na = "")
-arrow::write_feather(processed_combined, "NY_Lewis/20201103__ny__general__saratoga__precinct.feather")
+write_csv(processed_combined, "NY_Saratoga/20201103__ny__general__saratoga__precinct.csv", na = "")
+arrow::write_feather(processed_combined, "NY_Saratoga/20201103__ny__general__saratoga__precinct.feather")
 
