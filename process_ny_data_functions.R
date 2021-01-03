@@ -3,8 +3,6 @@ library(janitor)
 library(readxl)
 
 
-# BUILD FUNCTION ####
-
 ### We'll create a function to handle the repetitive part of the processing
 # once the initial excel cleanup steps are taken. The file will have a precinct column,
 # followed by columns with vote results with names formatted as "candidate - party"
