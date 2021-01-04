@@ -86,15 +86,12 @@ processed_statehou114
 ### COMBINE INTO ONE #####
 
 #combine tidy/long datasets created above 
-processed_combined <- bind_rows(processed_prez,
-                                processed_cd20,
-                                processed_cd21, 
-                                processed_statesen43,
-                                processed_statesen49,
-                                processed_statehou108,
-                                processed_statehou112,
-                                processed_statehou113,
-                                processed_statehou114)
+#we'll use a pattern matching to pull all dataframes in the environment
+#with "processed" in the name and build a list of them to feed to bind_rows()
+target_dfs <- grep("processed", names(.GlobalEnv), value=TRUE)
+target_dfs_list <- do.call("list", mget(target_dfs))
+
+processed_combined <- bind_rows(target_dfs_list)
 
 
 #add county name for all records ####
@@ -118,6 +115,7 @@ processed_combined %>%
 #check candidates
 processed_combined %>% 
   count(candidate)
+
 
 
 ### EXPORT RESULTS ####
