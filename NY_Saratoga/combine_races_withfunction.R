@@ -27,7 +27,7 @@ filestring_import <- paste0(
 
 
 # Presidential ####
-#run import and processing function in one step 
+#run processing function sourced at the top along with import in one step 
 processed_prez <- process_ny_data(read_excel(filestring_import, sheet = "presidential"), 
                                   "President", 
                                   "")
@@ -48,7 +48,6 @@ processed_cd21 <- process_ny_data(read_excel(filestring_import, sheet = "cd21"),
 processed_cd21
 
 
-
 ## State Senate 43 ####
 processed_statesen43 <- process_ny_data(read_excel(filestring_import, sheet = "statesen43"),
                                         "State Senate", 
@@ -61,7 +60,6 @@ processed_statesen49 <- process_ny_data(read_excel(filestring_import, sheet = "s
                                         "State Senate", 
                                         "49")
 processed_statesen49
-
 
 
 ## State House 108 ####
