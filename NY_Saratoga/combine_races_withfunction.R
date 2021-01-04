@@ -107,9 +107,9 @@ processed_combined <- processed_combined %>%
   mutate(
     county = target_county
   ) %>% 
-  select(county, everything())
+  select(county, everything()) %>% 
+  arrange(office, district)
 
-processed_combined
 
 
 ## MANUAL INTEGRITY CHECKS ####
