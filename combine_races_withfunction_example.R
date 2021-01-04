@@ -1,6 +1,5 @@
 # Script to be tailored for each county once data is cleaned and ready
 
-
 library(tidyverse)
 library(janitor)
 library(readxl)
