@@ -5,11 +5,6 @@ library(readxl)
 
 #source processing function
 source("process_ny_data_functions.R")
-
-# Function wants:
-# - dataset (or import from excel function)
-# - office: text label for office (e.g. "U.S. House")
-# - district: text label for district (e.g. "42")
                     
 
 ## PROCESS DATA FILES ####
@@ -27,7 +22,11 @@ filestring_import <- paste0(
 
 
 # Presidential ####
-#run processing function sourced at the top along with import in one step 
+#run processing function sourced at the top along with import in one step
+# Function wants:
+# - dataset (or import from excel function)
+# - office: text label for office (e.g. "U.S. House")
+# - district: text label for district (e.g. "42")
 processed_prez <- process_ny_data(read_excel(filestring_import, sheet = "presidential"), 
                                   "President", 
                                   "")
