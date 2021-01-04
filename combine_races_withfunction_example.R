@@ -5,7 +5,7 @@ library(janitor)
 library(readxl)
 # library(arrow) #for exporting feather files
 
-#source processing function
+#source processing function to use below
 source("process_ny_data_functions.R")
                     
 
@@ -32,63 +32,54 @@ filestring_import <- paste0(
 processed_prez <- process_ny_data(read_excel(filestring_import, sheet = "presidential"), 
                                   "President", 
                                   "")
-processed_prez
 
 
 ## Congressional - District 20 ####
 processed_cd20 <- process_ny_data(read_excel(filestring_import, sheet = "cd20"), 
                                   "U.S. House", 
                                   "20")
-processed_cd20
 
 
 ## Congressional - District 21 ####
 processed_cd21 <- process_ny_data(read_excel(filestring_import, sheet = "cd21"), 
                                   "U.S. House", 
                                   "21")
-processed_cd21
 
 
 ## State Senate 43 ####
 processed_statesen43 <- process_ny_data(read_excel(filestring_import, sheet = "statesen43"),
                                         "State Senate", 
                                         "43")
-processed_statesen43
 
 
 ## State Senate 49 ####
 processed_statesen49 <- process_ny_data(read_excel(filestring_import, sheet = "statesen49"),
                                         "State Senate", 
                                         "49")
-processed_statesen49
 
 
 ## State House 108 ####
 processed_statehou108 <- process_ny_data(read_excel(filestring_import, sheet = "statehou108"),
                                          "State Assembly", 
                                          "108")
-processed_statehou108
 
 
 ## State House 112 ####
 processed_statehou112 <- process_ny_data(read_excel(filestring_import, sheet = "statehou112"),
                                          "State Assembly", 
                                          "112")
-processed_statehou112
 
 
 ## State House 113 ####
 processed_statehou113 <- process_ny_data(read_excel(filestring_import, sheet = "statehou113"),
                                          "State Assembly", 
                                          "113")
-processed_statehou113
 
 
 ## State House 114 ####
 processed_statehou114 <- process_ny_data(read_excel(filestring_import, sheet = "statehou114"),
                                          "State Assembly", 
                                          "114")
-processed_statehou114
 
 
 
