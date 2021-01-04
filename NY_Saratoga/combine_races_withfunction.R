@@ -14,23 +14,35 @@ source("process_ny_data_functions.R")
 
 ## PROCESS DATA FILES ####
 
+#create county name variable and filename string for use below
+target_county = "Saratoga"
+
+filestring = paste0(
+              "NY_",
+              target_county,
+              "/",
+              target_county,
+              "_NY_GE20_cleaned.xlsx"
+            )
+
+
 # Presidential ####
 #run import and processing function in one step 
-processed_prez <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "presidential"), 
+processed_prez <- process_ny_data(read_excel(filestring, sheet = "presidential"), 
                                   "President", 
                                   "")
 processed_prez
 
 
 ## Congressional - District 20 ####
-processed_cd20 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "cd20"), 
+processed_cd20 <- process_ny_data(read_excel(filestring, sheet = "cd20"), 
                                   "U.S. House", 
                                   "20")
 processed_cd20
 
 
 ## Congressional - District 21 ####
-processed_cd21 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "cd21"), 
+processed_cd21 <- process_ny_data(read_excel(filestring, sheet = "cd21"), 
                                   "U.S. House", 
                                   "21")
 processed_cd21
@@ -38,14 +50,14 @@ processed_cd21
 
 
 ## State Senate 43 ####
-processed_statesen43 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statesen43"),
+processed_statesen43 <- process_ny_data(read_excel(filestring, sheet = "statesen43"),
                                         "State Senate", 
                                         "43")
 processed_statesen43
 
 
 ## State Senate 49 ####
-processed_statesen49 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statesen49"),
+processed_statesen49 <- process_ny_data(read_excel(filestring, sheet = "statesen49"),
                                         "State Senate", 
                                         "49")
 processed_statesen49
@@ -53,33 +65,31 @@ processed_statesen49
 
 
 ## State House 108 ####
-processed_statehou108 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statehou108"),
+processed_statehou108 <- process_ny_data(read_excel(filestring, sheet = "statehou108"),
                                          "State Assembly", 
                                          "108")
 processed_statehou108
 
 
 ## State House 112 ####
-processed_statehou112 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statehou112"),
+processed_statehou112 <- process_ny_data(read_excel(filestring, sheet = "statehou112"),
                                          "State Assembly", 
                                          "112")
 processed_statehou112
 
 
 ## State House 113 ####
-processed_statehou113 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statehou113"),
+processed_statehou113 <- process_ny_data(read_excel(filestring, sheet = "statehou113"),
                                          "State Assembly", 
                                          "113")
 processed_statehou113
 
 
 ## State House 114 ####
-processed_statehou114 <- process_ny_data(read_excel("NY_Saratoga/Saratoga_NY_GE20_cleaned.xlsx", sheet = "statehou114"),
+processed_statehou114 <- process_ny_data(read_excel(filestring, sheet = "statehou114"),
                                          "State Assembly", 
                                          "114")
 processed_statehou114
-
-
 
 
 
@@ -95,9 +105,10 @@ processed_combined <- bind_rows(target_dfs_list)
 
 
 #add county name for all records ####
+#we'll use the saved county name specified at top of script
 processed_combined <- processed_combined %>% 
   mutate(
-    county = "Saratoga"
+    county = target_county
   ) %>% 
   select(county, everything())
 
