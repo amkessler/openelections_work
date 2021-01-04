@@ -15,9 +15,9 @@ source("process_ny_data_functions.R")
 ## PROCESS DATA FILES ####
 
 #create county name variable and Excel file name string for use below
-target_county = "Saratoga"
+target_county <- "Saratoga"
 
-filestring_import_import = paste0(
+filestring_import <- paste0(
               "NY_",
               target_county,
               "/",
@@ -141,5 +141,6 @@ filestring_export <- paste0(
                         "__precinct.csv"
                       )
 
+#export to csv
 write_csv(processed_combined, filestring_export, na = "")
 
