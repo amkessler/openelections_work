@@ -1,7 +1,7 @@
 library(tidyverse)
 library(janitor)
 library(readxl)
-library(arrow)
+# library(arrow) #for exporting feather files
 
 #source processing function
 source("process_ny_data_functions.R")
@@ -14,10 +14,10 @@ source("process_ny_data_functions.R")
 
 ## PROCESS DATA FILES ####
 
-#create county name variable and filename string for use below
+#create county name variable and Excel file name string for use below
 target_county = "Saratoga"
 
-filestring = paste0(
+filestring_import_import = paste0(
               "NY_",
               target_county,
               "/",
@@ -28,21 +28,21 @@ filestring = paste0(
 
 # Presidential ####
 #run import and processing function in one step 
-processed_prez <- process_ny_data(read_excel(filestring, sheet = "presidential"), 
+processed_prez <- process_ny_data(read_excel(filestring_import, sheet = "presidential"), 
                                   "President", 
                                   "")
 processed_prez
 
 
 ## Congressional - District 20 ####
-processed_cd20 <- process_ny_data(read_excel(filestring, sheet = "cd20"), 
+processed_cd20 <- process_ny_data(read_excel(filestring_import, sheet = "cd20"), 
                                   "U.S. House", 
                                   "20")
 processed_cd20
 
 
 ## Congressional - District 21 ####
-processed_cd21 <- process_ny_data(read_excel(filestring, sheet = "cd21"), 
+processed_cd21 <- process_ny_data(read_excel(filestring_import, sheet = "cd21"), 
                                   "U.S. House", 
                                   "21")
 processed_cd21
@@ -50,14 +50,14 @@ processed_cd21
 
 
 ## State Senate 43 ####
-processed_statesen43 <- process_ny_data(read_excel(filestring, sheet = "statesen43"),
+processed_statesen43 <- process_ny_data(read_excel(filestring_import, sheet = "statesen43"),
                                         "State Senate", 
                                         "43")
 processed_statesen43
 
 
 ## State Senate 49 ####
-processed_statesen49 <- process_ny_data(read_excel(filestring, sheet = "statesen49"),
+processed_statesen49 <- process_ny_data(read_excel(filestring_import, sheet = "statesen49"),
                                         "State Senate", 
                                         "49")
 processed_statesen49
@@ -65,28 +65,28 @@ processed_statesen49
 
 
 ## State House 108 ####
-processed_statehou108 <- process_ny_data(read_excel(filestring, sheet = "statehou108"),
+processed_statehou108 <- process_ny_data(read_excel(filestring_import, sheet = "statehou108"),
                                          "State Assembly", 
                                          "108")
 processed_statehou108
 
 
 ## State House 112 ####
-processed_statehou112 <- process_ny_data(read_excel(filestring, sheet = "statehou112"),
+processed_statehou112 <- process_ny_data(read_excel(filestring_import, sheet = "statehou112"),
                                          "State Assembly", 
                                          "112")
 processed_statehou112
 
 
 ## State House 113 ####
-processed_statehou113 <- process_ny_data(read_excel(filestring, sheet = "statehou113"),
+processed_statehou113 <- process_ny_data(read_excel(filestring_import, sheet = "statehou113"),
                                          "State Assembly", 
                                          "113")
 processed_statehou113
 
 
 ## State House 114 ####
-processed_statehou114 <- process_ny_data(read_excel(filestring, sheet = "statehou114"),
+processed_statehou114 <- process_ny_data(read_excel(filestring_import, sheet = "statehou114"),
                                          "State Assembly", 
                                          "114")
 processed_statehou114
@@ -115,6 +115,7 @@ processed_combined <- processed_combined %>%
 processed_combined
 
 
+## MANUAL INTEGRITY CHECKS ####
 #check parties
 processed_combined %>% 
   count(party)
@@ -131,7 +132,14 @@ processed_combined %>%
 
 ### EXPORT RESULTS ####
 
-#use openelex naming convention
-write_csv(processed_combined, "NY_Saratoga/20201103__ny__general__saratoga__precinct.csv", na = "")
-arrow::write_feather(processed_combined, "NY_Saratoga/20201103__ny__general__saratoga__precinct.feather")
+#build file name string using openelex naming convention
+filestring_export <- paste0(
+                        "NY_",
+                        target_county,
+                        "/20201103__ny__general__",
+                        str_to_lower(target_county),
+                        "__precinct.csv"
+                      )
+
+write_csv(processed_combined, filestring_export, na = "")
 
