@@ -2,7 +2,8 @@ library(tidyverse)
 library(janitor)
 library(readxl)
 library(precinctsopenelex) ## this is custom package developed for this process
-                           ## https://github.com/amkessler/precinctsopenelex
+                           ## install from: https://github.com/amkessler/precinctsopenelex
+                           ## remotes::("amkessler/precinctsopenelex")
 
 
 ## PROCESS DATA FILES ####
@@ -19,69 +20,72 @@ infile_string
 # Function wants:
 # - dataset (or import from excel function)
 # - office: text label for office (e.g. "U.S. House")
-# - district: text label for district (e.g. "42")
+# - district: text label for district (e.g. "42"; for statewide races use "")
 
 # Presidential
-processed_prez <- precinctsopenelex::reshape_ny_data(read_excel(infile_string, sheet = "presidential"), 
+processed_prez <- precinctsopenelex::reshape_precinct_data(read_excel(infile_string, sheet = "presidential"), 
                                   "President", 
                                   "")
 processed_prez
 
 
-## Congressional - District 20 ####
-processed_cd20 <- process_ny_data(read_excel(filestring_import, sheet = "cd20"), 
+## U.S. Senate ####
+processed_ussenate <- reshape_precinct_data(read_excel(infile_string, sheet = "ussenate"), 
+                                  "U.S. Senate", 
+                                  "")
+processed_ussenate
+
+
+## Congressional - District 02 ####
+processed_cd02 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd02"), 
                                   "U.S. House", 
-                                  "20")
-processed_cd20
+                                  "02")
+processed_cd02
+
+## Congressional - District 06 ####
+processed_cd06 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd06"), 
+                                        "U.S. House", 
+                                        "06")
+processed_cd06
 
 
-## Congressional - District 21 ####
-processed_cd21 <- process_ny_data(read_excel(filestring_import, sheet = "cd21"), 
-                                  "U.S. House", 
-                                  "21")
-processed_cd21
+## State House 72  ####
+processed_statehou72 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou72"),
+                                        "State House", 
+                                        "72")
+processed_statehou72
 
 
-## State Senate 43 ####
-processed_statesen43 <- process_ny_data(read_excel(filestring_import, sheet = "statesen43"),
-                                        "State Senate", 
-                                        "43")
-processed_statesen43
+## State House 80  ####
+processed_statehou80 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou80"),
+                                              "State House", 
+                                              "80")
+processed_statehou80
 
 
-## State Senate 49 ####
-processed_statesen49 <- process_ny_data(read_excel(filestring_import, sheet = "statesen49"),
-                                        "State Senate", 
-                                        "49")
-processed_statesen49
+#there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
+#we'll handle these below
+
+## Straight Party Ticket  ####
+processed_straightparty <- reshape_precinct_data(read_excel(infile_string, sheet = "straightparty"),
+                                              "Straight Party", 
+                                              "")
+processed_straightparty
+
+## Registered and Total Ballots  ####
+processed_reg_and_ballots <- reshape_precinct_data(read_excel(infile_string, sheet = "total_reg_and_cast"),
+                                                 "", 
+                                                 "")
+#this one requires a little manual step as well to finish up
+processed_reg_and_ballots <- processed_reg_and_ballots %>% 
+  mutate(
+    office = candidate,
+    candidate = "",
+    party = ""
+  )
+processed_reg_and_ballots
 
 
-## State House 108 ####
-processed_statehou108 <- process_ny_data(read_excel(filestring_import, sheet = "statehou108"),
-                                         "State Assembly", 
-                                         "108")
-processed_statehou108
-
-
-## State House 112 ####
-processed_statehou112 <- process_ny_data(read_excel(filestring_import, sheet = "statehou112"),
-                                         "State Assembly", 
-                                         "112")
-processed_statehou112
-
-
-## State House 113 ####
-processed_statehou113 <- process_ny_data(read_excel(filestring_import, sheet = "statehou113"),
-                                         "State Assembly", 
-                                         "113")
-processed_statehou113
-
-
-## State House 114 ####
-processed_statehou114 <- process_ny_data(read_excel(filestring_import, sheet = "statehou114"),
-                                         "State Assembly", 
-                                         "114")
-processed_statehou114
 
 
 
