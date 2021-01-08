@@ -9,11 +9,11 @@ library(precinctsopenelex) ## this is custom package developed for this process
 ## PROCESS DATA FILES ####
 
 # create state and county name variables
-target_state <- "MI"
-target_county <- "Allegan"
+current_state <- "MI"
+current_county <- "Allegan"
 
 # use custom package function to create input string to Excel file
-infile_string <- precinctsopenelex::create_infile_string(target_state, target_county)
+infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
 infile_string
 
 # run reshaping function from custom package along with import in one step
@@ -104,7 +104,7 @@ processed_combined <- bind_rows(target_dfs_list)
 #we'll use the saved county name specified at top of script
 processed_combined <- processed_combined %>% 
   mutate(
-    county = target_county
+    county = current_county
   ) %>% 
   select(county, everything()) %>% 
   arrange(office, district)
@@ -130,7 +130,7 @@ processed_combined %>%
 
 #build file name string to openelex standardized naming convention
 #we'll once again use the custom package for this, as well as our location variables assigned at the top
-outfile_string <- precinctsopenelex::create_outfile_string(target_state, target_county)
+outfile_string <- precinctsopenelex::create_outfile_string(current_state, current_county)
 outfile_string
 
 #export to csv
