@@ -10,7 +10,7 @@ library(readxl)
 # - office: text label for office (e.g. "U.S. House")
 # - district: text label for district (e.g. "42")
                                  
-process_ny_data <- function(df, office, district){
+process_ny_data <- function(df, office, district, countyname){
   #determine how many columns, since races can have diff number of candidates
   colnum <- length(colnames(df))  
   #begin processing dataset
