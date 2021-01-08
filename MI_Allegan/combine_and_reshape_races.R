@@ -128,15 +128,11 @@ processed_combined %>%
 
 ### EXPORT RESULTS ####
 
-#build file name string using openelex naming convention
-filestring_export <- paste0(
-                        "NY_",
-                        target_county,
-                        "/20201103__ny__general__",
-                        str_to_lower(target_county),
-                        "__precinct.csv"
-                      )
+#build file name string to openelex standardized naming convention
+#we'll once again use the custom package for this, as well as our location variables assigned at the top
+outfile_string <- precinctsopenelex::create_outfile_string(target_state, target_county)
+outfile_string
 
 #export to csv
-write_csv(processed_combined, filestring_export, na = "")
+write_csv(processed_combined, outfile_string, na = "")
 
