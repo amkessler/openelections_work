@@ -1,0 +1,673 @@
+county,precinct,office,district,candidate,party,votes
+Barry,"City of Hastings, Precinct 1H",Ballots Cast,"","","",1061
+Barry,"City of Hastings, Precinct 2H",Ballots Cast,"","","",840
+Barry,"City of Hastings, Precinct 3H",Ballots Cast,"","","",856
+Barry,"City of Hastings, Precinct 4H",Ballots Cast,"","","",1051
+Barry,"Assyria Township, Precinct 1",Ballots Cast,"","","",1179
+Barry,"Baltimore Township, Precinct 1",Ballots Cast,"","","",1093
+Barry,"Barry Township, Precinct 1",Ballots Cast,"","","",1956
+Barry,"Carlton Township, Precinct 1",Ballots Cast,"","","",1455
+Barry,"Castleton Township, Precinct 1",Ballots Cast,"","","",1525
+Barry,"Hastings Township, Precinct 1",Ballots Cast,"","","",1749
+Barry,"Hope Township, Precinct 1",Ballots Cast,"","","",1915
+Barry,"Irving Township, Precinct 1",Ballots Cast,"","","",2155
+Barry,"Johnstown Township, Precinct 1",Ballots Cast,"","","",1800
+Barry,"Maple Grove Township, Precinct 1",Ballots Cast,"","","",813
+Barry,"Orangeville Township, Precinct 1",Ballots Cast,"","","",1992
+Barry,"Prairieville Township, Precinct 1",Ballots Cast,"","","",2032
+Barry,"Rutland Township, Precinct 1H",Ballots Cast,"","","",1107
+Barry,"Rutland Township, Precinct 2",Ballots Cast,"","","",1522
+Barry,"Thornapple Township, Precinct 1",Ballots Cast,"","","",1981
+Barry,"Thornapple Township, Precinct 2",Ballots Cast,"","","",1375
+Barry,"Thornapple Township, Precinct 3",Ballots Cast,"","","",2053
+Barry,"Woodland Township, Precinct 1",Ballots Cast,"","","",1259
+Barry,"Yankee Springs Township, Precinct 1",Ballots Cast,"","","",1919
+Barry,"Yankee Springs Township, Precinct 2",Ballots Cast,"","","",1458
+Barry,"City of Hastings, Precinct 1H",President,"",Joseph R. Biden,DEM,480
+Barry,"City of Hastings, Precinct 1H",President,"",Donald J. Trump,REP,550
+Barry,"City of Hastings, Precinct 1H",President,"",Jo Jorgensen,LIB,17
+Barry,"City of Hastings, Precinct 1H",President,"",Don Blankenship,UST,1
+Barry,"City of Hastings, Precinct 1H",President,"",Howie Hawkins,GRN,2
+Barry,"City of Hastings, Precinct 1H",President,"",Rocky De La Fuente,NAT,1
+Barry,"City of Hastings, Precinct 1H",President,"",Write-Ins,"",1
+Barry,"City of Hastings, Precinct 2H",President,"",Joseph R. Biden,DEM,318
+Barry,"City of Hastings, Precinct 2H",President,"",Donald J. Trump,REP,504
+Barry,"City of Hastings, Precinct 2H",President,"",Jo Jorgensen,LIB,9
+Barry,"City of Hastings, Precinct 2H",President,"",Don Blankenship,UST,0
+Barry,"City of Hastings, Precinct 2H",President,"",Howie Hawkins,GRN,4
+Barry,"City of Hastings, Precinct 2H",President,"",Rocky De La Fuente,NAT,0
+Barry,"City of Hastings, Precinct 2H",President,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 3H",President,"",Joseph R. Biden,DEM,335
+Barry,"City of Hastings, Precinct 3H",President,"",Donald J. Trump,REP,492
+Barry,"City of Hastings, Precinct 3H",President,"",Jo Jorgensen,LIB,19
+Barry,"City of Hastings, Precinct 3H",President,"",Don Blankenship,UST,3
+Barry,"City of Hastings, Precinct 3H",President,"",Howie Hawkins,GRN,3
+Barry,"City of Hastings, Precinct 3H",President,"",Rocky De La Fuente,NAT,0
+Barry,"City of Hastings, Precinct 3H",President,"",Write-Ins,"",3
+Barry,"City of Hastings, Precinct 4H",President,"",Joseph R. Biden,DEM,473
+Barry,"City of Hastings, Precinct 4H",President,"",Donald J. Trump,REP,537
+Barry,"City of Hastings, Precinct 4H",President,"",Jo Jorgensen,LIB,22
+Barry,"City of Hastings, Precinct 4H",President,"",Don Blankenship,UST,3
+Barry,"City of Hastings, Precinct 4H",President,"",Howie Hawkins,GRN,2
+Barry,"City of Hastings, Precinct 4H",President,"",Rocky De La Fuente,NAT,1
+Barry,"City of Hastings, Precinct 4H",President,"",Write-Ins,"",2
+Barry,"Assyria Township, Precinct 1",President,"",Joseph R. Biden,DEM,274
+Barry,"Assyria Township, Precinct 1",President,"",Donald J. Trump,REP,888
+Barry,"Assyria Township, Precinct 1",President,"",Jo Jorgensen,LIB,8
+Barry,"Assyria Township, Precinct 1",President,"",Don Blankenship,UST,1
+Barry,"Assyria Township, Precinct 1",President,"",Howie Hawkins,GRN,1
+Barry,"Assyria Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Assyria Township, Precinct 1",President,"",Write-Ins,"",0
+Barry,"Baltimore Township, Precinct 1",President,"",Joseph R. Biden,DEM,283
+Barry,"Baltimore Township, Precinct 1",President,"",Donald J. Trump,REP,787
+Barry,"Baltimore Township, Precinct 1",President,"",Jo Jorgensen,LIB,15
+Barry,"Baltimore Township, Precinct 1",President,"",Don Blankenship,UST,1
+Barry,"Baltimore Township, Precinct 1",President,"",Howie Hawkins,GRN,2
+Barry,"Baltimore Township, Precinct 1",President,"",Rocky De La Fuente,NAT,2
+Barry,"Baltimore Township, Precinct 1",President,"",Write-Ins,"",0
+Barry,"Barry Township, Precinct 1",President,"",Joseph R. Biden,DEM,700
+Barry,"Barry Township, Precinct 1",President,"",Donald J. Trump,REP,1202
+Barry,"Barry Township, Precinct 1",President,"",Jo Jorgensen,LIB,26
+Barry,"Barry Township, Precinct 1",President,"",Don Blankenship,UST,4
+Barry,"Barry Township, Precinct 1",President,"",Howie Hawkins,GRN,12
+Barry,"Barry Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Barry Township, Precinct 1",President,"",Write-Ins,"",3
+Barry,"Carlton Township, Precinct 1",President,"",Joseph R. Biden,DEM,425
+Barry,"Carlton Township, Precinct 1",President,"",Donald J. Trump,REP,989
+Barry,"Carlton Township, Precinct 1",President,"",Jo Jorgensen,LIB,21
+Barry,"Carlton Township, Precinct 1",President,"",Don Blankenship,UST,3
+Barry,"Carlton Township, Precinct 1",President,"",Howie Hawkins,GRN,0
+Barry,"Carlton Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Carlton Township, Precinct 1",President,"",Write-Ins,"",2
+Barry,"Castleton Township, Precinct 1",President,"",Joseph R. Biden,DEM,457
+Barry,"Castleton Township, Precinct 1",President,"",Donald J. Trump,REP,1038
+Barry,"Castleton Township, Precinct 1",President,"",Jo Jorgensen,LIB,14
+Barry,"Castleton Township, Precinct 1",President,"",Don Blankenship,UST,1
+Barry,"Castleton Township, Precinct 1",President,"",Howie Hawkins,GRN,6
+Barry,"Castleton Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Castleton Township, Precinct 1",President,"",Write-Ins,"",2
+Barry,"Hastings Township, Precinct 1",President,"",Joseph R. Biden,DEM,555
+Barry,"Hastings Township, Precinct 1",President,"",Donald J. Trump,REP,1156
+Barry,"Hastings Township, Precinct 1",President,"",Jo Jorgensen,LIB,24
+Barry,"Hastings Township, Precinct 1",President,"",Don Blankenship,UST,1
+Barry,"Hastings Township, Precinct 1",President,"",Howie Hawkins,GRN,4
+Barry,"Hastings Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Hastings Township, Precinct 1",President,"",Write-Ins,"",3
+Barry,"Hope Township, Precinct 1",President,"",Joseph R. Biden,DEM,621
+Barry,"Hope Township, Precinct 1",President,"",Donald J. Trump,REP,1253
+Barry,"Hope Township, Precinct 1",President,"",Jo Jorgensen,LIB,24
+Barry,"Hope Township, Precinct 1",President,"",Don Blankenship,UST,4
+Barry,"Hope Township, Precinct 1",President,"",Howie Hawkins,GRN,1
+Barry,"Hope Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Hope Township, Precinct 1",President,"",Write-Ins,"",3
+Barry,"Irving Township, Precinct 1",President,"",Joseph R. Biden,DEM,583
+Barry,"Irving Township, Precinct 1",President,"",Donald J. Trump,REP,1517
+Barry,"Irving Township, Precinct 1",President,"",Jo Jorgensen,LIB,28
+Barry,"Irving Township, Precinct 1",President,"",Don Blankenship,UST,4
+Barry,"Irving Township, Precinct 1",President,"",Howie Hawkins,GRN,4
+Barry,"Irving Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Irving Township, Precinct 1",President,"",Write-Ins,"",4
+Barry,"Johnstown Township, Precinct 1",President,"",Joseph R. Biden,DEM,578
+Barry,"Johnstown Township, Precinct 1",President,"",Donald J. Trump,REP,1186
+Barry,"Johnstown Township, Precinct 1",President,"",Jo Jorgensen,LIB,20
+Barry,"Johnstown Township, Precinct 1",President,"",Don Blankenship,UST,3
+Barry,"Johnstown Township, Precinct 1",President,"",Howie Hawkins,GRN,3
+Barry,"Johnstown Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Johnstown Township, Precinct 1",President,"",Write-Ins,"",1
+Barry,"Maple Grove Township, Precinct 1",President,"",Joseph R. Biden,DEM,191
+Barry,"Maple Grove Township, Precinct 1",President,"",Donald J. Trump,REP,608
+Barry,"Maple Grove Township, Precinct 1",President,"",Jo Jorgensen,LIB,5
+Barry,"Maple Grove Township, Precinct 1",President,"",Don Blankenship,UST,4
+Barry,"Maple Grove Township, Precinct 1",President,"",Howie Hawkins,GRN,1
+Barry,"Maple Grove Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Maple Grove Township, Precinct 1",President,"",Write-Ins,"",0
+Barry,"Orangeville Township, Precinct 1",President,"",Joseph R. Biden,DEM,645
+Barry,"Orangeville Township, Precinct 1",President,"",Donald J. Trump,REP,1289
+Barry,"Orangeville Township, Precinct 1",President,"",Jo Jorgensen,LIB,28
+Barry,"Orangeville Township, Precinct 1",President,"",Don Blankenship,UST,2
+Barry,"Orangeville Township, Precinct 1",President,"",Howie Hawkins,GRN,7
+Barry,"Orangeville Township, Precinct 1",President,"",Rocky De La Fuente,NAT,1
+Barry,"Orangeville Township, Precinct 1",President,"",Write-Ins,"",2
+Barry,"Prairieville Township, Precinct 1",President,"",Joseph R. Biden,DEM,817
+Barry,"Prairieville Township, Precinct 1",President,"",Donald J. Trump,REP,1176
+Barry,"Prairieville Township, Precinct 1",President,"",Jo Jorgensen,LIB,19
+Barry,"Prairieville Township, Precinct 1",President,"",Don Blankenship,UST,2
+Barry,"Prairieville Township, Precinct 1",President,"",Howie Hawkins,GRN,5
+Barry,"Prairieville Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Prairieville Township, Precinct 1",President,"",Write-Ins,"",2
+Barry,"Rutland Township, Precinct 1H",President,"",Joseph R. Biden,DEM,378
+Barry,"Rutland Township, Precinct 1H",President,"",Donald J. Trump,REP,704
+Barry,"Rutland Township, Precinct 1H",President,"",Jo Jorgensen,LIB,11
+Barry,"Rutland Township, Precinct 1H",President,"",Don Blankenship,UST,3
+Barry,"Rutland Township, Precinct 1H",President,"",Howie Hawkins,GRN,0
+Barry,"Rutland Township, Precinct 1H",President,"",Rocky De La Fuente,NAT,2
+Barry,"Rutland Township, Precinct 1H",President,"",Write-Ins,"",1
+Barry,"Rutland Township, Precinct 2",President,"",Joseph R. Biden,DEM,581
+Barry,"Rutland Township, Precinct 2",President,"",Donald J. Trump,REP,908
+Barry,"Rutland Township, Precinct 2",President,"",Jo Jorgensen,LIB,23
+Barry,"Rutland Township, Precinct 2",President,"",Don Blankenship,UST,0
+Barry,"Rutland Township, Precinct 2",President,"",Howie Hawkins,GRN,2
+Barry,"Rutland Township, Precinct 2",President,"",Rocky De La Fuente,NAT,1
+Barry,"Rutland Township, Precinct 2",President,"",Write-Ins,"",0
+Barry,"Thornapple Township, Precinct 1",President,"",Joseph R. Biden,DEM,549
+Barry,"Thornapple Township, Precinct 1",President,"",Donald J. Trump,REP,1374
+Barry,"Thornapple Township, Precinct 1",President,"",Jo Jorgensen,LIB,33
+Barry,"Thornapple Township, Precinct 1",President,"",Don Blankenship,UST,7
+Barry,"Thornapple Township, Precinct 1",President,"",Howie Hawkins,GRN,5
+Barry,"Thornapple Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Thornapple Township, Precinct 1",President,"",Write-Ins,"",4
+Barry,"Thornapple Township, Precinct 2",President,"",Joseph R. Biden,DEM,357
+Barry,"Thornapple Township, Precinct 2",President,"",Donald J. Trump,REP,984
+Barry,"Thornapple Township, Precinct 2",President,"",Jo Jorgensen,LIB,24
+Barry,"Thornapple Township, Precinct 2",President,"",Don Blankenship,UST,1
+Barry,"Thornapple Township, Precinct 2",President,"",Howie Hawkins,GRN,4
+Barry,"Thornapple Township, Precinct 2",President,"",Rocky De La Fuente,NAT,0
+Barry,"Thornapple Township, Precinct 2",President,"",Write-Ins,"",2
+Barry,"Thornapple Township, Precinct 3",President,"",Joseph R. Biden,DEM,757
+Barry,"Thornapple Township, Precinct 3",President,"",Donald J. Trump,REP,1230
+Barry,"Thornapple Township, Precinct 3",President,"",Jo Jorgensen,LIB,39
+Barry,"Thornapple Township, Precinct 3",President,"",Don Blankenship,UST,4
+Barry,"Thornapple Township, Precinct 3",President,"",Howie Hawkins,GRN,8
+Barry,"Thornapple Township, Precinct 3",President,"",Rocky De La Fuente,NAT,0
+Barry,"Thornapple Township, Precinct 3",President,"",Write-Ins,"",10
+Barry,"Woodland Township, Precinct 1",President,"",Joseph R. Biden,DEM,409
+Barry,"Woodland Township, Precinct 1",President,"",Donald J. Trump,REP,820
+Barry,"Woodland Township, Precinct 1",President,"",Jo Jorgensen,LIB,11
+Barry,"Woodland Township, Precinct 1",President,"",Don Blankenship,UST,2
+Barry,"Woodland Township, Precinct 1",President,"",Howie Hawkins,GRN,1
+Barry,"Woodland Township, Precinct 1",President,"",Rocky De La Fuente,NAT,2
+Barry,"Woodland Township, Precinct 1",President,"",Write-Ins,"",4
+Barry,"Yankee Springs Township, Precinct 1",President,"",Joseph R. Biden,DEM,567
+Barry,"Yankee Springs Township, Precinct 1",President,"",Donald J. Trump,REP,1308
+Barry,"Yankee Springs Township, Precinct 1",President,"",Jo Jorgensen,LIB,24
+Barry,"Yankee Springs Township, Precinct 1",President,"",Don Blankenship,UST,5
+Barry,"Yankee Springs Township, Precinct 1",President,"",Howie Hawkins,GRN,4
+Barry,"Yankee Springs Township, Precinct 1",President,"",Rocky De La Fuente,NAT,0
+Barry,"Yankee Springs Township, Precinct 1",President,"",Write-Ins,"",6
+Barry,"Yankee Springs Township, Precinct 2",President,"",Joseph R. Biden,DEM,464
+Barry,"Yankee Springs Township, Precinct 2",President,"",Donald J. Trump,REP,971
+Barry,"Yankee Springs Township, Precinct 2",President,"",Jo Jorgensen,LIB,15
+Barry,"Yankee Springs Township, Precinct 2",President,"",Don Blankenship,UST,0
+Barry,"Yankee Springs Township, Precinct 2",President,"",Howie Hawkins,GRN,2
+Barry,"Yankee Springs Township, Precinct 2",President,"",Rocky De La Fuente,NAT,0
+Barry,"Yankee Springs Township, Precinct 2",President,"",Write-Ins,"",1
+Barry,"City of Hastings, Precinct 1H",State House,87,Jay Molette,DEM,366
+Barry,"City of Hastings, Precinct 1H",State House,87,Julie A. Calley,REP,656
+Barry,"City of Hastings, Precinct 1H",State House,87,Write-Ins,"",5
+Barry,"City of Hastings, Precinct 2H",State House,87,Jay Molette,DEM,266
+Barry,"City of Hastings, Precinct 2H",State House,87,Julie A. Calley,REP,534
+Barry,"City of Hastings, Precinct 2H",State House,87,Write-Ins,"",2
+Barry,"City of Hastings, Precinct 3H",State House,87,Jay Molette,DEM,279
+Barry,"City of Hastings, Precinct 3H",State House,87,Julie A. Calley,REP,540
+Barry,"City of Hastings, Precinct 3H",State House,87,Write-Ins,"",3
+Barry,"City of Hastings, Precinct 4H",State House,87,Jay Molette,DEM,381
+Barry,"City of Hastings, Precinct 4H",State House,87,Julie A. Calley,REP,631
+Barry,"City of Hastings, Precinct 4H",State House,87,Write-Ins,"",1
+Barry,"Assyria Township, Precinct 1",State House,87,Jay Molette,DEM,234
+Barry,"Assyria Township, Precinct 1",State House,87,Julie A. Calley,REP,881
+Barry,"Assyria Township, Precinct 1",State House,87,Write-Ins,"",2
+Barry,"Baltimore Township, Precinct 1",State House,87,Jay Molette,DEM,225
+Barry,"Baltimore Township, Precinct 1",State House,87,Julie A. Calley,REP,823
+Barry,"Baltimore Township, Precinct 1",State House,87,Write-Ins,"",5
+Barry,"Barry Township, Precinct 1",State House,87,Jay Molette,DEM,568
+Barry,"Barry Township, Precinct 1",State House,87,Julie A. Calley,REP,1296
+Barry,"Barry Township, Precinct 1",State House,87,Write-Ins,"",5
+Barry,"Carlton Township, Precinct 1",State House,87,Jay Molette,DEM,332
+Barry,"Carlton Township, Precinct 1",State House,87,Julie A. Calley,REP,1076
+Barry,"Carlton Township, Precinct 1",State House,87,Write-Ins,"",5
+Barry,"Castleton Township, Precinct 1",State House,87,Jay Molette,DEM,390
+Barry,"Castleton Township, Precinct 1",State House,87,Julie A. Calley,REP,1087
+Barry,"Castleton Township, Precinct 1",State House,87,Write-Ins,"",8
+Barry,"Hastings Township, Precinct 1",State House,87,Jay Molette,DEM,457
+Barry,"Hastings Township, Precinct 1",State House,87,Julie A. Calley,REP,1240
+Barry,"Hastings Township, Precinct 1",State House,87,Write-Ins,"",6
+Barry,"Hope Township, Precinct 1",State House,87,Jay Molette,DEM,518
+Barry,"Hope Township, Precinct 1",State House,87,Julie A. Calley,REP,1301
+Barry,"Hope Township, Precinct 1",State House,87,Write-Ins,"",9
+Barry,"Irving Township, Precinct 1",State House,87,Jay Molette,DEM,479
+Barry,"Irving Township, Precinct 1",State House,87,Julie A. Calley,REP,1579
+Barry,"Irving Township, Precinct 1",State House,87,Write-Ins,"",4
+Barry,"Johnstown Township, Precinct 1",State House,87,Jay Molette,DEM,501
+Barry,"Johnstown Township, Precinct 1",State House,87,Julie A. Calley,REP,1216
+Barry,"Johnstown Township, Precinct 1",State House,87,Write-Ins,"",6
+Barry,"Maple Grove Township, Precinct 1",State House,87,Jay Molette,DEM,154
+Barry,"Maple Grove Township, Precinct 1",State House,87,Julie A. Calley,REP,624
+Barry,"Maple Grove Township, Precinct 1",State House,87,Write-Ins,"",0
+Barry,"Orangeville Township, Precinct 1",State House,87,Jay Molette,DEM,558
+Barry,"Orangeville Township, Precinct 1",State House,87,Julie A. Calley,REP,1320
+Barry,"Orangeville Township, Precinct 1",State House,87,Write-Ins,"",4
+Barry,"Prairieville Township, Precinct 1",State House,87,Jay Molette,DEM,692
+Barry,"Prairieville Township, Precinct 1",State House,87,Julie A. Calley,REP,1246
+Barry,"Prairieville Township, Precinct 1",State House,87,Write-Ins,"",4
+Barry,"Rutland Township, Precinct 1H",State House,87,Jay Molette,DEM,303
+Barry,"Rutland Township, Precinct 1H",State House,87,Julie A. Calley,REP,750
+Barry,"Rutland Township, Precinct 1H",State House,87,Write-Ins,"",3
+Barry,"Rutland Township, Precinct 2",State House,87,Jay Molette,DEM,453
+Barry,"Rutland Township, Precinct 2",State House,87,Julie A. Calley,REP,1013
+Barry,"Rutland Township, Precinct 2",State House,87,Write-Ins,"",3
+Barry,"Thornapple Township, Precinct 1",State House,87,Jay Molette,DEM,444
+Barry,"Thornapple Township, Precinct 1",State House,87,Julie A. Calley,REP,1474
+Barry,"Thornapple Township, Precinct 1",State House,87,Write-Ins,"",5
+Barry,"Thornapple Township, Precinct 2",State House,87,Jay Molette,DEM,289
+Barry,"Thornapple Township, Precinct 2",State House,87,Julie A. Calley,REP,1021
+Barry,"Thornapple Township, Precinct 2",State House,87,Write-Ins,"",9
+Barry,"Thornapple Township, Precinct 3",State House,87,Jay Molette,DEM,654
+Barry,"Thornapple Township, Precinct 3",State House,87,Julie A. Calley,REP,1305
+Barry,"Thornapple Township, Precinct 3",State House,87,Write-Ins,"",4
+Barry,"Woodland Township, Precinct 1",State House,87,Jay Molette,DEM,311
+Barry,"Woodland Township, Precinct 1",State House,87,Julie A. Calley,REP,891
+Barry,"Woodland Township, Precinct 1",State House,87,Write-Ins,"",2
+Barry,"Yankee Springs Township, Precinct 1",State House,87,Jay Molette,DEM,486
+Barry,"Yankee Springs Township, Precinct 1",State House,87,Julie A. Calley,REP,1349
+Barry,"Yankee Springs Township, Precinct 1",State House,87,Write-Ins,"",8
+Barry,"Yankee Springs Township, Precinct 2",State House,87,Jay Molette,DEM,392
+Barry,"Yankee Springs Township, Precinct 2",State House,87,Julie A. Calley,REP,1014
+Barry,"Yankee Springs Township, Precinct 2",State House,87,Write-Ins,"",3
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Democratic Party,DEM,195
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Republican Party,REP,326
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Libertarian Party,LIB,3
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",U.S. Taxpayers Party,UST,2
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Working Class Party,WCP,4
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Green Party,GRN,4
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Natural Law Party,NLP,2
+Barry,"City of Hastings, Precinct 1H",Straight Party,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Democratic Party,DEM,130
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Republican Party,REP,312
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Libertarian Party,LIB,5
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Working Class Party,WCP,3
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Green Party,GRN,1
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Natural Law Party,NLP,1
+Barry,"City of Hastings, Precinct 2H",Straight Party,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Democratic Party,DEM,121
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Republican Party,REP,296
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Libertarian Party,LIB,5
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Working Class Party,WCP,2
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Green Party,GRN,1
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Natural Law Party,NLP,0
+Barry,"City of Hastings, Precinct 3H",Straight Party,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Democratic Party,DEM,192
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Republican Party,REP,284
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Libertarian Party,LIB,5
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Working Class Party,WCP,0
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Green Party,GRN,2
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Natural Law Party,NLP,0
+Barry,"City of Hastings, Precinct 4H",Straight Party,"",Write-Ins,"",0
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Democratic Party,DEM,148
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Republican Party,REP,553
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,3
+Barry,"Assyria Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Working Class Party,WCP,1
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Assyria Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Democratic Party,DEM,126
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Republican Party,REP,387
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,3
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Working Class Party,WCP,4
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Green Party,GRN,0
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Baltimore Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Barry Township, Precinct 1",Straight Party,"",Democratic Party,DEM,280
+Barry,"Barry Township, Precinct 1",Straight Party,"",Republican Party,REP,661
+Barry,"Barry Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,1
+Barry,"Barry Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,3
+Barry,"Barry Township, Precinct 1",Straight Party,"",Working Class Party,WCP,5
+Barry,"Barry Township, Precinct 1",Straight Party,"",Green Party,GRN,4
+Barry,"Barry Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Barry Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Democratic Party,DEM,207
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Republican Party,REP,589
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,5
+Barry,"Carlton Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Working Class Party,WCP,3
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Green Party,GRN,0
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Carlton Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Democratic Party,DEM,230
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Republican Party,REP,626
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,8
+Barry,"Castleton Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Working Class Party,WCP,2
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,2
+Barry,"Castleton Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Democratic Party,DEM,234
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Republican Party,REP,665
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,5
+Barry,"Hastings Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Working Class Party,WCP,8
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Green Party,GRN,0
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Hastings Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Hope Township, Precinct 1",Straight Party,"",Democratic Party,DEM,266
+Barry,"Hope Township, Precinct 1",Straight Party,"",Republican Party,REP,706
+Barry,"Hope Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,1
+Barry,"Hope Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"Hope Township, Precinct 1",Straight Party,"",Working Class Party,WCP,3
+Barry,"Hope Township, Precinct 1",Straight Party,"",Green Party,GRN,2
+Barry,"Hope Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Hope Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Irving Township, Precinct 1",Straight Party,"",Democratic Party,DEM,241
+Barry,"Irving Township, Precinct 1",Straight Party,"",Republican Party,REP,853
+Barry,"Irving Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,4
+Barry,"Irving Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"Irving Township, Precinct 1",Straight Party,"",Working Class Party,WCP,4
+Barry,"Irving Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Irving Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Irving Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Democratic Party,DEM,294
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Republican Party,REP,727
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,10
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Working Class Party,WCP,4
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Green Party,GRN,2
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Johnstown Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Democratic Party,DEM,96
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Republican Party,REP,369
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,1
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Working Class Party,WCP,2
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Maple Grove Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Democratic Party,DEM,352
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Republican Party,REP,864
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,8
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Working Class Party,WCP,12
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Orangeville Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Democratic Party,DEM,376
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Republican Party,REP,696
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,5
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,2
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Working Class Party,WCP,2
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Green Party,GRN,2
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Prairieville Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Democratic Party,DEM,173
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Republican Party,REP,421
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Libertarian Party,LIB,2
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",U.S. Taxpayers Party,UST,3
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Working Class Party,WCP,4
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Green Party,GRN,0
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Rutland Township, Precinct 1H",Straight Party,"",Write-Ins,"",0
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Democratic Party,DEM,263
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Republican Party,REP,503
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Libertarian Party,LIB,3
+Barry,"Rutland Township, Precinct 2",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Working Class Party,WCP,4
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Green Party,GRN,1
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Natural Law Party,NLP,1
+Barry,"Rutland Township, Precinct 2",Straight Party,"",Write-Ins,"",0
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Democratic Party,DEM,203
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Republican Party,REP,902
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,8
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,2
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Working Class Party,WCP,2
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Green Party,GRN,1
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Thornapple Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Democratic Party,DEM,148
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Republican Party,REP,632
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Libertarian Party,LIB,4
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Working Class Party,WCP,2
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Green Party,GRN,3
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Thornapple Township, Precinct 2",Straight Party,"",Write-Ins,"",0
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Democratic Party,DEM,349
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Republican Party,REP,768
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Libertarian Party,LIB,15
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",U.S. Taxpayers Party,UST,3
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Working Class Party,WCP,7
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Green Party,GRN,3
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Natural Law Party,NLP,2
+Barry,"Thornapple Township, Precinct 3",Straight Party,"",Write-Ins,"",0
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Democratic Party,DEM,190
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Republican Party,REP,519
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,2
+Barry,"Woodland Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Working Class Party,WCP,3
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Green Party,GRN,2
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Woodland Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Democratic Party,DEM,259
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Republican Party,REP,784
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Libertarian Party,LIB,11
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",U.S. Taxpayers Party,UST,0
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Working Class Party,WCP,7
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Green Party,GRN,0
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Natural Law Party,NLP,2
+Barry,"Yankee Springs Township, Precinct 1",Straight Party,"",Write-Ins,"",0
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Democratic Party,DEM,210
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Republican Party,REP,648
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Libertarian Party,LIB,5
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",U.S. Taxpayers Party,UST,1
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Working Class Party,WCP,3
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Green Party,GRN,2
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Natural Law Party,NLP,0
+Barry,"Yankee Springs Township, Precinct 2",Straight Party,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 1H",U.S. House,03,Hillary Scholten,DEM,472
+Barry,"City of Hastings, Precinct 1H",U.S. House,03,Peter Meijer,REP,555
+Barry,"City of Hastings, Precinct 1H",U.S. House,03,Write-Ins,"",4
+Barry,"City of Hastings, Precinct 2H",U.S. House,03,Hillary Scholten,DEM,329
+Barry,"City of Hastings, Precinct 2H",U.S. House,03,Peter Meijer,REP,481
+Barry,"City of Hastings, Precinct 2H",U.S. House,03,Write-Ins,"",2
+Barry,"City of Hastings, Precinct 3H",U.S. House,03,Hillary Scholten,DEM,349
+Barry,"City of Hastings, Precinct 3H",U.S. House,03,Peter Meijer,REP,480
+Barry,"City of Hastings, Precinct 3H",U.S. House,03,Write-Ins,"",5
+Barry,"City of Hastings, Precinct 4H",U.S. House,03,Hillary Scholten,DEM,468
+Barry,"City of Hastings, Precinct 4H",U.S. House,03,Peter Meijer,REP,547
+Barry,"City of Hastings, Precinct 4H",U.S. House,03,Write-Ins,"",2
+Barry,"Assyria Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,289
+Barry,"Assyria Township, Precinct 1",U.S. House,03,Peter Meijer,REP,851
+Barry,"Assyria Township, Precinct 1",U.S. House,03,Write-Ins,"",2
+Barry,"Baltimore Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,330
+Barry,"Baltimore Township, Precinct 1",U.S. House,03,Peter Meijer,REP,723
+Barry,"Baltimore Township, Precinct 1",U.S. House,03,Write-Ins,"",8
+Barry,"Barry Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,701
+Barry,"Barry Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1195
+Barry,"Barry Township, Precinct 1",U.S. House,03,Write-Ins,"",5
+Barry,"Carlton Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,441
+Barry,"Carlton Township, Precinct 1",U.S. House,03,Peter Meijer,REP,984
+Barry,"Carlton Township, Precinct 1",U.S. House,03,Write-Ins,"",0
+Barry,"Castleton Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,471
+Barry,"Castleton Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1009
+Barry,"Castleton Township, Precinct 1",U.S. House,03,Write-Ins,"",8
+Barry,"Hastings Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,579
+Barry,"Hastings Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1134
+Barry,"Hastings Township, Precinct 1",U.S. House,03,Write-Ins,"",4
+Barry,"Hope Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,663
+Barry,"Hope Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1201
+Barry,"Hope Township, Precinct 1",U.S. House,03,Write-Ins,"",5
+Barry,"Irving Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,614
+Barry,"Irving Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1485
+Barry,"Irving Township, Precinct 1",U.S. House,03,Write-Ins,"",5
+Barry,"Johnstown Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,613
+Barry,"Johnstown Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1133
+Barry,"Johnstown Township, Precinct 1",U.S. House,03,Write-Ins,"",4
+Barry,"Maple Grove Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,205
+Barry,"Maple Grove Township, Precinct 1",U.S. House,03,Peter Meijer,REP,574
+Barry,"Maple Grove Township, Precinct 1",U.S. House,03,Write-Ins,"",2
+Barry,"Orangeville Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,669
+Barry,"Orangeville Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1262
+Barry,"Orangeville Township, Precinct 1",U.S. House,03,Write-Ins,"",11
+Barry,"Prairieville Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,804
+Barry,"Prairieville Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1166
+Barry,"Prairieville Township, Precinct 1",U.S. House,03,Write-Ins,"",7
+Barry,"Rutland Township, Precinct 1H",U.S. House,03,Hillary Scholten,DEM,378
+Barry,"Rutland Township, Precinct 1H",U.S. House,03,Peter Meijer,REP,695
+Barry,"Rutland Township, Precinct 1H",U.S. House,03,Write-Ins,"",6
+Barry,"Rutland Township, Precinct 2",U.S. House,03,Hillary Scholten,DEM,574
+Barry,"Rutland Township, Precinct 2",U.S. House,03,Peter Meijer,REP,908
+Barry,"Rutland Township, Precinct 2",U.S. House,03,Write-Ins,"",6
+Barry,"Thornapple Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,543
+Barry,"Thornapple Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1405
+Barry,"Thornapple Township, Precinct 1",U.S. House,03,Write-Ins,"",7
+Barry,"Thornapple Township, Precinct 2",U.S. House,03,Hillary Scholten,DEM,352
+Barry,"Thornapple Township, Precinct 2",U.S. House,03,Peter Meijer,REP,1003
+Barry,"Thornapple Township, Precinct 2",U.S. House,03,Write-Ins,"",4
+Barry,"Thornapple Township, Precinct 3",U.S. House,03,Hillary Scholten,DEM,788
+Barry,"Thornapple Township, Precinct 3",U.S. House,03,Peter Meijer,REP,1206
+Barry,"Thornapple Township, Precinct 3",U.S. House,03,Write-Ins,"",6
+Barry,"Woodland Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,394
+Barry,"Woodland Township, Precinct 1",U.S. House,03,Peter Meijer,REP,817
+Barry,"Woodland Township, Precinct 1",U.S. House,03,Write-Ins,"",6
+Barry,"Yankee Springs Township, Precinct 1",U.S. House,03,Hillary Scholten,DEM,587
+Barry,"Yankee Springs Township, Precinct 1",U.S. House,03,Peter Meijer,REP,1286
+Barry,"Yankee Springs Township, Precinct 1",U.S. House,03,Write-Ins,"",2
+Barry,"Yankee Springs Township, Precinct 2",U.S. House,03,Hillary Scholten,DEM,445
+Barry,"Yankee Springs Township, Precinct 2",U.S. House,03,Peter Meijer,REP,983
+Barry,"Yankee Springs Township, Precinct 2",U.S. House,03,Write-Ins,"",2
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",Gary Peters,DEM,442
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",John James,REP,569
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",Valerie L. Willis,UST,18
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",Doug Dern,NAT,3
+Barry,"City of Hastings, Precinct 1H",U.S. Senate,"",Write-Ins,"",4
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",Gary Peters,DEM,310
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",John James,REP,485
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",Valerie L. Willis,UST,15
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",Marcia Squier,GRN,10
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",Doug Dern,NAT,0
+Barry,"City of Hastings, Precinct 2H",U.S. Senate,"",Write-Ins,"",0
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",Gary Peters,DEM,313
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",John James,REP,497
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",Valerie L. Willis,UST,16
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",Marcia Squier,GRN,16
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",Doug Dern,NAT,1
+Barry,"City of Hastings, Precinct 3H",U.S. Senate,"",Write-Ins,"",2
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",Gary Peters,DEM,456
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",John James,REP,548
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",Valerie L. Willis,UST,13
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",Marcia Squier,GRN,6
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",Doug Dern,NAT,2
+Barry,"City of Hastings, Precinct 4H",U.S. Senate,"",Write-Ins,"",0
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,284
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",John James,REP,845
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,14
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,5
+Barry,"Assyria Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,279
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",John James,REP,766
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,19
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,3
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,8
+Barry,"Baltimore Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,649
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",John James,REP,1231
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,17
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,21
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,6
+Barry,"Barry Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,414
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",John James,REP,992
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,20
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,3
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,3
+Barry,"Carlton Township, Precinct 1",U.S. Senate,"",Write-Ins,"",0
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,473
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",John James,REP,989
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,19
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,10
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,9
+Barry,"Castleton Township, Precinct 1",U.S. Senate,"",Write-Ins,"",2
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,557
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",John James,REP,1152
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,8
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,6
+Barry,"Hastings Township, Precinct 1",U.S. Senate,"",Write-Ins,"",3
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,619
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",John James,REP,1225
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,28
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,7
+Barry,"Hope Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,571
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",John James,REP,1527
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,13
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,10
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,2
+Barry,"Irving Township, Precinct 1",U.S. Senate,"",Write-Ins,"",0
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,579
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",John James,REP,1157
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,17
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,14
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,5
+Barry,"Johnstown Township, Precinct 1",U.S. Senate,"",Write-Ins,"",2
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,183
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",John James,REP,600
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,6
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,3
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,3
+Barry,"Maple Grove Township, Precinct 1",U.S. Senate,"",Write-Ins,"",0
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,625
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",John James,REP,1299
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,18
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,5
+Barry,"Orangeville Township, Precinct 1",U.S. Senate,"",Write-Ins,"",4
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,771
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",John James,REP,1193
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,18
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,13
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,5
+Barry,"Prairieville Township, Precinct 1",U.S. Senate,"",Write-Ins,"",2
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",Gary Peters,DEM,367
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",John James,REP,701
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",Valerie L. Willis,UST,11
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",Doug Dern,NAT,3
+Barry,"Rutland Township, Precinct 1H",U.S. Senate,"",Write-Ins,"",0
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",Gary Peters,DEM,540
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",John James,REP,933
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",Valerie L. Willis,UST,12
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",Marcia Squier,GRN,5
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",Doug Dern,NAT,6
+Barry,"Rutland Township, Precinct 2",U.S. Senate,"",Write-Ins,"",1
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,497
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",John James,REP,1440
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,15
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,10
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,2
+Barry,"Thornapple Township, Precinct 1",U.S. Senate,"",Write-Ins,"",2
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",Gary Peters,DEM,341
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",John James,REP,994
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",Valerie L. Willis,UST,10
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",Marcia Squier,GRN,17
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",Doug Dern,NAT,1
+Barry,"Thornapple Township, Precinct 2",U.S. Senate,"",Write-Ins,"",1
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",Gary Peters,DEM,722
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",John James,REP,1249
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",Valerie L. Willis,UST,21
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",Marcia Squier,GRN,20
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",Doug Dern,NAT,6
+Barry,"Thornapple Township, Precinct 3",U.S. Senate,"",Write-Ins,"",2
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,408
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",John James,REP,804
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,14
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,5
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,3
+Barry,"Woodland Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",Gary Peters,DEM,535
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",John James,REP,1313
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",Valerie L. Willis,UST,17
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",Marcia Squier,GRN,12
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",Doug Dern,NAT,2
+Barry,"Yankee Springs Township, Precinct 1",U.S. Senate,"",Write-Ins,"",1
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",Gary Peters,DEM,434
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",John James,REP,990
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",Valerie L. Willis,UST,7
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",Marcia Squier,GRN,9
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",Doug Dern,NAT,2
+Barry,"Yankee Springs Township, Precinct 2",U.S. Senate,"",Write-Ins,"",1
