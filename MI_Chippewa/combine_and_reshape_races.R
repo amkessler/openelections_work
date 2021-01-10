@@ -66,34 +66,22 @@ processed_straightparty
 reg_and_ballots <- read_excel(infile_string, sheet = "total_reg_and_cast") %>% 
                                       janitor::clean_names()
 
-#registered voters
-processed_reg <- reg_and_ballots %>% 
-  select(precinct, registered_voters) %>% 
-  mutate(
-    office = "Registered Voters",
-    district = "",
-    candidate = "",
-    party = "",
-    votes = registered_voters
-  ) %>% 
-  select(-registered_voters)
+#function to handle this
+convert_toplevel_totals <- function(df, column_with_totals, office_text) {
+  df_converted <- df %>% 
+    select(precinct, votes = column_with_totals) %>% 
+    mutate(
+      office = office_text,
+      district = "",
+      candidate = "",
+      party = ""
+    ) %>% 
+    select(precinct, office, district, candidate, party, votes)
+  return(df_converted)
+}
 
-processed_reg
-
-#ballots cast
-processed_ballots <- reg_and_ballots %>% 
-  select(precinct, ballots_cast) %>% 
-  mutate(
-    office = "Ballots Cast",
-    district = "",
-    candidate = "",
-    party = "",
-    votes = ballots_cast
-  ) %>% 
-  select(-ballots_cast)
-
-processed_ballots
-
+processed_reg <- convert_toplevel_totals(reg_and_ballots, "registered_voters", "Registered Voters")
+processed_ballots <- convert_toplevel_totals(reg_and_ballots, "ballots_cast", "Ballots Cast")
 
 
 ### COMBINE INTO ONE #####
