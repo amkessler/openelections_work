@@ -10,7 +10,7 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Allegan"
+current_county <- "Chippewa"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -37,30 +37,18 @@ processed_ussenate
 
 
 ## Congressional - District 02 ####
-processed_cd02 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd02"), 
+processed_cd01 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd01"), 
                                   "U.S. House", 
-                                  "02")
-processed_cd02
-
-## Congressional - District 06 ####
-processed_cd06 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd06"), 
-                                        "U.S. House", 
-                                        "06")
-processed_cd06
+                                  "01")
+processed_cd01
 
 
 ## State House 72  ####
-processed_statehou72 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou72"),
+processed_statehou107 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou107"),
                                         "State House", 
-                                        "72")
-processed_statehou72
+                                        "107")
+processed_statehou107
 
-
-## State House 80  ####
-processed_statehou80 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou80"),
-                                              "State House", 
-                                              "80")
-processed_statehou80
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
@@ -72,20 +60,39 @@ processed_straightparty <- reshape_precinct_data(read_excel(infile_string, sheet
                                               "")
 processed_straightparty
 
+
 ## Registered and Total Ballots  ####
-processed_reg_and_ballots <- reshape_precinct_data(read_excel(infile_string, sheet = "total_reg_and_cast"),
-                                                 "", 
-                                                 "")
-#this one requires a little manual step as well to finish up
-processed_reg_and_ballots <- processed_reg_and_ballots %>% 
+#this one requires some manual work to finish up
+reg_and_ballots <- read_excel(infile_string, sheet = "total_reg_and_cast") %>% 
+                                      janitor::clean_names()
+
+#registered voters
+processed_reg <- reg_and_ballots %>% 
+  select(precinct, registered_voters) %>% 
   mutate(
-    office = candidate,
+    office = "Registered Voters",
+    district = "",
     candidate = "",
-    party = ""
-  )
-processed_reg_and_ballots
+    party = "",
+    votes = registered_voters
+  ) %>% 
+  select(-registered_voters)
 
+processed_reg
 
+#ballots cast
+processed_ballots <- reg_and_ballots %>% 
+  select(precinct, ballots_cast) %>% 
+  mutate(
+    office = "Ballots Cast",
+    district = "",
+    candidate = "",
+    party = "",
+    votes = ballots_cast
+  ) %>% 
+  select(-ballots_cast)
+
+processed_ballots
 
 
 
