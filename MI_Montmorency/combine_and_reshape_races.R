@@ -2,15 +2,15 @@ library(tidyverse)
 library(janitor)
 library(readxl)
 library(precinctsopenelex) ## this is custom package developed for this process
-                           ## install from: https://github.com/amkessler/precinctsopenelex
-                           ## remotes::("amkessler/precinctsopenelex")
+                           ## install/update from: https://github.com/amkessler/precinctsopenelex
+                           ## remotes::install_github("amkessler/precinctsopenelex")
 
 
 ## PROCESS DATA FILES ####
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Chippewa"
+current_county <- "Montmorency"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -44,10 +44,10 @@ processed_cd01
 
 
 ## State House 72  ####
-processed_statehou107 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou107"),
+processed_statehou105 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou105"),
                                         "State House", 
-                                        "107")
-processed_statehou107
+                                        "105")
+processed_statehou105
 
 
 
@@ -65,23 +65,12 @@ processed_straightparty
 #this one requires some manual work to finish up
 reg_and_ballots <- read_excel(infile_string, sheet = "total_reg_and_cast") %>% 
                                       janitor::clean_names()
-
-#function to handle this
-convert_toplevel_totals <- function(df, column_with_totals, office_text) {
-  df_converted <- df %>% 
-    select(precinct, votes = column_with_totals) %>% 
-    mutate(
-      office = office_text,
-      district = "",
-      candidate = "",
-      party = ""
-    ) %>% 
-    select(precinct, office, district, candidate, party, votes)
-  return(df_converted)
-}
-
+#use new package function to handle the final steps
 processed_reg <- convert_toplevel_totals(reg_and_ballots, "registered_voters", "Registered Voters")
-processed_ballots <- convert_toplevel_totals(reg_and_ballots, "ballots_cast", "Ballots Cast")
+processed_ballots <- convert_toplevel_totals(reg_and_ballots, "voters_cast", "Ballots Cast")
+
+processed_reg
+processed_ballots
 
 
 ### COMBINE INTO ONE #####
