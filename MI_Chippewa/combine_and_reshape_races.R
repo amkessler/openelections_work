@@ -3,7 +3,7 @@ library(janitor)
 library(readxl)
 library(precinctsopenelex) ## this is custom package developed for this process
                            ## install from: https://github.com/amkessler/precinctsopenelex
-                           ## remotes::("amkessler/precinctsopenelex")
+                           ## remotes::install_github("amkessler/precinctsopenelex")
 
 
 ## PROCESS DATA FILES ####
