@@ -129,7 +129,7 @@ processed_combined %>%
 
 #check candidates
 processed_combined %>% 
-  count(candidate)
+  count(candidate) %>% View()
 
 
 
