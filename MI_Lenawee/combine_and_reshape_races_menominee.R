@@ -10,31 +10,53 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Lenawee"
+current_county <- "Menominee"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
 infile_string
 
-# run reshaping function from custom package along with import in one step
+# run reshaping function from custom package
 # Function wants:
 # - dataset (or import from excel function)
 # - office: text label for office (e.g. "U.S. House")
 # - district: text label for district (e.g. "42"; for statewide races use "")
 
+#for compatible races also run column renaming function as well (Turns "Candidate (PTY)" into "Candiate - PTY")
+
+# mi_format_column_names <- function(df) {
+#   
+#   df <- df %>%
+#     janitor::remove_empty("cols")
+#   
+#   newcolnames <- df %>%
+#     names() %>%
+#     str_squish() %>%
+#     str_replace_all("\\(", "- ") %>%
+#     str_remove_all("\\)") %>% 
+#     str_replace_all("\\/", "&")
+#   
+#   colnames(df) <- newcolnames
+#   
+#   return(df)
+# }
+#**function above incorporated into package... **
+
+
 # Presidential
-processed_prez <- precinctsopenelex::reshape_precinct_data(read_excel(infile_string, sheet = "presidential"), 
-                                  "President", 
-                                  "")
+processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
+  precinctsopenelex::mi_format_column_names() %>% 
+  precinctsopenelex::reshape_precinct_data("President", "")
+
 processed_prez
 
 
 ## U.S. Senate ####
-processed_ussenate <- reshape_precinct_data(read_excel(infile_string, sheet = "ussenate"), 
-                                  "U.S. Senate", 
-                                  "")
-processed_ussenate
+processed_ussenate <- read_excel(infile_string, sheet = "ussenate") %>%  
+  mi_format_column_names() %>% 
+  reshape_precinct_data("U.S. Senate", "")
 
+processed_ussenate
 
 ## Congressional - District ####
 processed_cd07 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd07"), 
@@ -61,10 +83,15 @@ processed_statehou65
 #we'll handle these below
 
 ## Straight Party Ticket  ####
-processed_straightparty <- reshape_precinct_data(read_excel(infile_string, sheet = "straightparty"),
-                                              "Straight Party", 
-                                              "")
+processed_straightparty <- read_excel(infile_string, sheet = "straightparty") %>%  
+                                mi_format_column_names() %>% 
+                                reshape_precinct_data("Straight Party", "")
+
+
+
 processed_straightparty
+
+
 
 
 ## Registered and Total Ballots  ####
