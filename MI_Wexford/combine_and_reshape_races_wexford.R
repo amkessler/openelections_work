@@ -10,7 +10,7 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Houghton"
+current_county <- "Wexford"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -37,17 +37,17 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd01 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd01"), 
+processed_cd04 <- reshape_precinct_data(read_excel(infile_string, sheet = "cd04"), 
                                   "U.S. House", 
-                                  "01")
-processed_cd01
+                                  "04")
+processed_cd04
 
 
 ## State House ####
-processed_statehou110 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou110"),
+processed_statehou102 <- reshape_precinct_data(read_excel(infile_string, sheet = "statehou102"),
                                         "State House", 
-                                        "110")
-processed_statehou110
+                                        "102")
+processed_statehou102
 
 
 
