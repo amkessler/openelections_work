@@ -22,26 +22,8 @@ infile_string
 # - office: text label for office (e.g. "U.S. House")
 # - district: text label for district (e.g. "42"; for statewide races use "")
 
-#for compatible races also run column renaming function as well (Turns "Candidate (PTY)" into "Candiate - PTY")
-
-# mi_format_column_names <- function(df) {
-#   
-#   df <- df %>%
-#     janitor::remove_empty("cols")
-#   
-#   newcolnames <- df %>%
-#     names() %>%
-#     str_squish() %>%
-#     str_replace_all("\\(", "- ") %>%
-#     str_remove_all("\\)") %>% 
-#     str_replace_all("\\/", "&")
-#   
-#   colnames(df) <- newcolnames
-#   
-#   return(df)
-# }
-#**function above incorporated into package... **
-
+# for compatible races also run column renaming function mi_format_column_names() as well 
+# (Turns "Candidate (PTY)" into "Candiate - PTY")
 
 # Presidential
 processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
@@ -60,19 +42,19 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
+processed_cd02 <- read_excel(infile_string, sheet = "cd02") %>%  
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "01")
+  reshape_precinct_data("U.S. House", "02")
 
-processed_cd01
+processed_cd02
 
 
 ## State House ####
-processed_statehou108 <- read_excel(infile_string, sheet = "statehou108") %>%  
+processed_statehou100 <- read_excel(infile_string, sheet = "statehou100") %>%  
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "108")
+  reshape_precinct_data("State House", "100")
 
-processed_statehou108
+processed_statehou100
 
 
 
