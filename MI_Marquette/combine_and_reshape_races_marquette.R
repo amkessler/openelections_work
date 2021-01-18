@@ -10,7 +10,7 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Jackson"
+current_county <- "Marquette"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -42,27 +42,27 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd07 <- read_excel(infile_string, sheet = "cd07") %>%  
+processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "07")
+  reshape_precinct_data("U.S. House", "01")
 
-processed_cd07
+processed_cd01
 
 
 ## State House ####
-processed_statehou64 <- read_excel(infile_string, sheet = "statehou64") %>%  
+processed_statehou109 <- read_excel(infile_string, sheet = "statehou109") %>%  
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "64")
+  reshape_precinct_data("State House", "109")
 
-processed_statehou64
+processed_statehou109
 
 
 ## State House ####
-processed_statehou65 <- read_excel(infile_string, sheet = "statehou65") %>%  
+processed_statehou110 <- read_excel(infile_string, sheet = "statehou110") %>%  
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "65")
+  reshape_precinct_data("State House", "110")
 
-processed_statehou65
+processed_statehou110
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
