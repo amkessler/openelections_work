@@ -100,7 +100,7 @@ data %>%
 data
 
 
-clean_embedded_precinct_names <- function(data) {
+mi_clean_embedded_precinct_names <- function(data) {
   #first we need to determine if the second column is NA, since the pattern is the precinct names are NA for vote columns
   #don't want to hardcode in a column name because they'll be different for every election race type. but 2nd should always be NA.
   second_col_name <- data %>% 
@@ -128,14 +128,14 @@ clean_embedded_precinct_names <- function(data) {
 }
 
 
-clean_embedded_precinct_names(data2)
+mi_clean_embedded_precinct_names(data2)
 
 #bingo.
 
 # Now apply all three functions together
 
 data %>%  
-  clean_embedded_precinct_names %>% 
+  mi_clean_embedded_precinct_names() %>% 
   precinctsopenelex::mi_format_column_names() %>% 
   precinctsopenelex::reshape_precinct_data("Straight Party", "")
 
@@ -151,6 +151,7 @@ data %>%
 
 # Presidential
 processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
+  mi_clean_embedded_precinct_names() %>% 
   precinctsopenelex::mi_format_column_names() %>% 
   precinctsopenelex::reshape_precinct_data("President", "")
 
