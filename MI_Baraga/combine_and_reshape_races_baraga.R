@@ -27,9 +27,41 @@ infile_string
 
 
 ######################################################################
-# Work on new function for handling county names meshed with actual precinct names
+# Work on new handling for precinct names meshed with actual result type names.
+# We only need the "total" values, but need the precinct names themselves to be part of that row/record
 
+#import some of the data to work with
+data <- read_excel("MI_Baraga/MI_Baraga_GE20_cleaned.xlsx", 
+                                     sheet = "total_reg_and_cast")
 
+data
+
+#we can see that the precinct column includes not just the name of the precincts but the type of vote results, too.
+#this isn't good so let's find a way to remedy it.
+
+#first we need to determine if the second column is NA, since the pattern is the precinct names are NA for vote columns
+second_col_name <- data %>% 
+  select(2) %>% 
+  names()
+
+#then use that second column name variable to do a conditional replace of the precinct name only in new column
+data <- data %>% 
+  mutate(
+    testcol := if_else(is.na(!!sym(second_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym b/c dyanmic variable name
+    testcol = na_if(testcol, "replaceme")
+    )
+
+data
+
+#now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
+data <- data %>% 
+  tidyr::fill(testcol, .direction = "down")
+
+data
+
+#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
+data %>% 
+  filter(precinct == "Total")
 
 
 
