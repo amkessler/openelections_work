@@ -10,7 +10,7 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Gladwin"
+current_county <- "Baraga"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -24,6 +24,21 @@ infile_string
 
 # for compatible races also run column renaming function mi_format_column_names() as well 
 # (Turns "Candidate (PTY)" into "Candiate - PTY")
+
+
+######################################################################
+# Work on new function for handling county names meshed with actual precinct names
+
+
+
+
+
+
+
+
+
+######################################################################
+
 
 # Presidential
 processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
