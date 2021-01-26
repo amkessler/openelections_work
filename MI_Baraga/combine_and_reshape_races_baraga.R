@@ -60,12 +60,21 @@ data <- data %>%
 data
 
 #now that we have the precinct name with every row, we can filter for just the "Total" counts we want
-data %>% 
+data <- data %>% 
   filter(precinct == "Total")
 
+data
 
+#bingo now we've got it. 
+# Just need to rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
+data <- data %>% 
+  select(-precinct) %>% 
+  rename(precinct = testcol) %>% 
+  select(precinct, everything())
 
+data
 
+#and we're set.
 
 
 
