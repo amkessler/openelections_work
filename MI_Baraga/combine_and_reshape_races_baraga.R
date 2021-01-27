@@ -160,6 +160,7 @@ processed_prez
 
 ## U.S. Senate ####
 processed_ussenate <- read_excel(infile_string, sheet = "ussenate") %>%  
+  mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
   reshape_precinct_data("U.S. Senate", "")
 
@@ -167,19 +168,21 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd04 <- read_excel(infile_string, sheet = "cd04") %>%  
+processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
+  mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "04")
+  reshape_precinct_data("U.S. House", "01")
 
-processed_cd04
+processed_cd01
 
 
 ## State House ####
-processed_statehou97 <- read_excel(infile_string, sheet = "statehou97") %>%  
+processed_statehou110 <- read_excel(infile_string, sheet = "statehou110") %>%  
+  mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "97")
+  reshape_precinct_data("State House", "110")
 
-processed_statehou97
+processed_statehou110
 
 
 
@@ -188,6 +191,7 @@ processed_statehou97
 
 ## Straight Party Ticket  ####
 processed_straightparty <- read_excel(infile_string, sheet = "straightparty") %>%  
+                                mi_clean_embedded_precinct_names() %>% 
                                 mi_format_column_names() %>% 
                                 reshape_precinct_data("Straight Party", "")
 
@@ -198,6 +202,7 @@ processed_straightparty
 ## Registered and Total Ballots  ####
 #this one requires some manual work and separate function to finish up
 reg_and_ballots <- read_excel(infile_string, sheet = "total_reg_and_cast") %>% 
+                                      mi_clean_embedded_precinct_names() %>% 
                                       janitor::clean_names()
 
 #use package function to handle this
