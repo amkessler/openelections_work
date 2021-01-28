@@ -26,79 +26,6 @@ infile_string
 # (Turns "Candidate (PTY)" into "Candiate - PTY")
 
 
-######################################################################
-# Work on new handling for precinct names meshed with actual result type names.
-# We only need the "total" values, but need the precinct names themselves to be part of that row/record
-
-
-# start with each step in sequence on its own...
-
-#import some of the data to work with
-data <- read_excel("MI_Baraga/MI_Baraga_GE20_cleaned.xlsx", 
-                                     sheet = "straightparty")
-
-data
-#retain another copy for testing function below
-data2 <- data
-
-#we can see that the precinct column includes not just the name of the precincts but the type of vote results, too.
-#this isn't good so let's find a way to remedy it.
-
-#first we need to determine if the second column is NA, since the pattern is the precinct names are NA for vote columns
-#don't want to hardcode in a column name because they'll be different for every election race type. but 2nd should always be NA.
-second_col_name <- data %>% 
-  select(2) %>% 
-  names()
-
-#then use that second column name variable to do a conditional replace of the precinct name only in new column
-data <- data %>% 
-  mutate(
-    testcol := if_else(is.na(!!sym(second_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym b/c dyanmic variable name
-    testcol = na_if(testcol, "replaceme")
-    )
-
-data
-
-#now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
-data <- data %>% 
-  tidyr::fill(testcol, .direction = "down")
-
-data
-
-#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
-data <- data %>% 
-  filter(precinct == "Total")
-
-data
-
-#bingo now we've got it. 
-# Just need to rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
-data <- data %>% 
-  select(-precinct) %>% 
-  rename(precinct = testcol) %>% 
-  select(precinct, everything())
-
-data
-
-#and we're set!
-
-
-#Let's test out running this data through the other existing processing functions now
-data %>%  
-  precinctsopenelex::mi_format_column_names() %>% 
-  precinctsopenelex::reshape_precinct_data("Straight Party", "")
-
-#woohoo
-
-
-### Let's try to now make a function out of the above sequence of steps..
-
-
-
-#we can see that the precinct column includes not just the name of the precincts but the type of vote results, too.
-#this isn't good so let's find a way to remedy it.
-data
-
 
 mi_clean_embedded_precinct_names <- function(data) {
   #first we need to determine if the second column is NA, since the pattern is the precinct names are NA for vote columns
@@ -128,21 +55,6 @@ mi_clean_embedded_precinct_names <- function(data) {
 }
 
 
-mi_clean_embedded_precinct_names(data2)
-
-#bingo.
-
-# Now apply all three functions together
-
-data %>%  
-  mi_clean_embedded_precinct_names() %>% 
-  precinctsopenelex::mi_format_column_names() %>% 
-  precinctsopenelex::reshape_precinct_data("Straight Party", "")
-
-# it works. woohoo.
-
-# We'll now use the function to apply below to the rest of the Baraga County races.
-
 
 
 
@@ -168,21 +80,21 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
+processed_cd06 <- read_excel(infile_string, sheet = "cd06") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "01")
+  reshape_precinct_data("U.S. House", "06")
 
-processed_cd01
+processed_cd06
 
 
 ## State House ####
-processed_statehou110 <- read_excel(infile_string, sheet = "statehou110") %>%  
+processed_statehou79 <- read_excel(infile_string, sheet = "statehou79") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "110")
+  reshape_precinct_data("State House", "79")
 
-processed_statehou110
+processed_statehou79
 
 
 
