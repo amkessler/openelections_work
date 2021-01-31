@@ -79,6 +79,7 @@ processed_statehou101
 
 ## Straight Party Ticket  ####
 processed_straightparty <- read_excel(infile_string, sheet = "straightparty") %>%  
+                                mi_clean_embedded_precinct_names() %>% 
                                 mi_format_column_names() %>% 
                                 reshape_precinct_data("Straight Party", "")
 
