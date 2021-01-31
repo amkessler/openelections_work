@@ -42,6 +42,7 @@ infile_string
 processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
   precinctsopenelex:: mi_clean_embedded_precinct_names() %>% 
   precinctsopenelex::mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
   precinctsopenelex::reshape_precinct_data("President", "")
 
 processed_prez
@@ -51,27 +52,48 @@ processed_prez
 processed_ussenate <- read_excel(infile_string, sheet = "ussenate") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
   reshape_precinct_data("U.S. Senate", "")
 
 processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
+processed_cd08 <- read_excel(infile_string, sheet = "cd08") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "01")
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("U.S. House", "08")
 
-processed_cd01
+processed_cd08
 
 
 ## State House ####
-processed_statehou101 <- read_excel(infile_string, sheet = "statehou101") %>%  
+processed_statehou67 <- read_excel(infile_string, sheet = "statehou67") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "101")
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("State House", "67")
 
-processed_statehou101
+processed_statehou67
+
+
+## State House - B ####
+processed_statehou68 <- read_excel(infile_string, sheet = "statehou68") %>%  
+  mi_clean_embedded_precinct_names() %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("State House", "68")
+
+
+## State House - C ####
+processed_statehou69 <- read_excel(infile_string, sheet = "statehou69") %>%  
+  mi_clean_embedded_precinct_names() %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("State House", "69")
+
+processed_statehou69
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
@@ -79,17 +101,19 @@ processed_statehou101
 
 ## Straight Party Ticket  ####
 processed_straightparty <- read_excel(infile_string, sheet = "straightparty") %>%  
+                                mi_clean_embedded_precinct_names() %>% 
                                 mi_format_column_names() %>% 
+                                mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
                                 reshape_precinct_data("Straight Party", "")
 
-processed_straightparty
-
+processed_straightparty 
 
 
 ## Registered and Total Ballots  ####
 #this one requires some manual work and separate function to finish up
 reg_and_ballots <- read_excel(infile_string, sheet = "total_reg_and_cast") %>% 
                                       mi_clean_embedded_precinct_names() %>% 
+                                      mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
                                       janitor::clean_names()
 
 #use package function to handle this
