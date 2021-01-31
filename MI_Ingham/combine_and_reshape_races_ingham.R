@@ -10,52 +10,29 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Berrien"
+current_county <- "Ingham"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
 infile_string
 
-# run reshaping function from custom package
+
+# We'll now use THREE functions from the custom package to clean/process the data for each race:
+
+# 1)
+# Since this county has staggered/embedded precinct names and types mixed together, we'll run the function
+# added to the package, mi_clean_embedded_precinct_names(), as well first out of the gate
+
+# 2)
+# We'll then run the column renaming function mi_format_column_names() as well 
+# (Turns "Candidate (PTY)" into "Candiate - PTY")
+
+# 3)
+# Then run the main reshaping function from the package to convert to long/tidy format and add standard openelex columns
 # Function wants:
 # - dataset (or import from excel function)
 # - office: text label for office (e.g. "U.S. House")
 # - district: text label for district (e.g. "42"; for statewide races use "")
-
-# for compatible races also run column renaming function mi_format_column_names() as well 
-# (Turns "Candidate (PTY)" into "Candiate - PTY")
-
-
-
-mi_clean_embedded_precinct_names <- function(data) {
-  #first we need to determine if the second column is NA, since the pattern is the precinct names are NA for vote columns
-  #don't want to hardcode in a column name because they'll be different for every election race type. but 2nd should always be NA.
-  second_col_name <- data %>% 
-    select(2) %>% 
-    names()
-  #then use that second column name variable to do a conditional replace of the precinct name only in new column
-  data <- data %>% 
-    mutate(
-      testcol := if_else(is.na(!!sym(second_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
-      testcol = na_if(testcol, "replaceme")
-    )
-  #now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
-  data <- data %>% 
-    tidyr::fill(testcol, .direction = "down")
-  #now that we have the precinct name with every row, we can filter for just the "Total" counts we want
-  data <- data %>% 
-    filter(precinct == "Total")
-  #finally rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
-  data <- data %>% 
-    select(-precinct) %>% 
-    rename(precinct = testcol) %>% 
-    select(precinct, everything())
-  
-  return(data)
-}
-
-
-
 
 
 ######################################################################
@@ -63,7 +40,7 @@ mi_clean_embedded_precinct_names <- function(data) {
 
 # Presidential
 processed_prez <- read_excel(infile_string, sheet = "presidential") %>%  
-  mi_clean_embedded_precinct_names() %>% 
+  precinctsopenelex:: mi_clean_embedded_precinct_names() %>% 
   precinctsopenelex::mi_format_column_names() %>% 
   precinctsopenelex::reshape_precinct_data("President", "")
 
@@ -80,22 +57,21 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd06 <- read_excel(infile_string, sheet = "cd06") %>%  
+processed_cd01 <- read_excel(infile_string, sheet = "cd01") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("U.S. House", "06")
+  reshape_precinct_data("U.S. House", "01")
 
-processed_cd06
+processed_cd01
 
 
 ## State House ####
-processed_statehou79 <- read_excel(infile_string, sheet = "statehou79") %>%  
+processed_statehou101 <- read_excel(infile_string, sheet = "statehou101") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
-  reshape_precinct_data("State House", "79")
+  reshape_precinct_data("State House", "101")
 
-processed_statehou79
-
+processed_statehou101
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
@@ -103,7 +79,6 @@ processed_statehou79
 
 ## Straight Party Ticket  ####
 processed_straightparty <- read_excel(infile_string, sheet = "straightparty") %>%  
-                                mi_clean_embedded_precinct_names() %>% 
                                 mi_format_column_names() %>% 
                                 reshape_precinct_data("Straight Party", "")
 
