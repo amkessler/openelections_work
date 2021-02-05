@@ -59,23 +59,23 @@ processed_ussenate
 
 
 ## Congressional - District ####
-processed_cd08 <- read_excel(infile_string, sheet = "cd08") %>%  
+processed_cd07 <- read_excel(infile_string, sheet = "cd07") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("U.S. House", "08")
+  reshape_precinct_data("U.S. House", "07")
 
-processed_cd08
+processed_cd07
 
 
 ## State House ####
-processed_statehou67 <- read_excel(infile_string, sheet = "statehou67") %>%  
+processed_statehou17 <- read_excel(infile_string, sheet = "statehou17") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("State House", "67")
+  reshape_precinct_data("State House", "17")
 
-processed_statehou67
+processed_statehou17
 
 
 ## State House - B ####
@@ -87,13 +87,13 @@ processed_statehou68 <- read_excel(infile_string, sheet = "statehou68") %>%
 
 
 ## State House - C ####
-processed_statehou69 <- read_excel(infile_string, sheet = "statehou69") %>%  
+processed_statehou56 <- read_excel(infile_string, sheet = "statehou56") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("State House", "69")
+  reshape_precinct_data("State House", "56")
 
-processed_statehou69
+processed_statehou56
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
