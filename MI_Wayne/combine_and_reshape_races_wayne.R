@@ -96,10 +96,61 @@ processed_cd14
 
 
 
-
-
-
 ## State House ####
+### Due to the enormous number of House districts for Wayne, this require some
+### custom stuff here below to wrangle it in a more efficient way
+
+#load pre-processed sheet with all but 3 districts (those done separately below)
+state_mostcombined <- read_excel("MI_Wayne/MI_Wayne_GE20_cleaned.xlsx", 
+                                  sheet = "allstate_except_take2")
+
+
+state_mostcombined %>% 
+  count(votecategory)
+
+#let's collapse the two non-dem "other" designations into one variable
+state_mostcombined <- state_mostcombined %>% 
+  mutate(
+    votecategory = if_else(votecategory == "dem", "dem", "other")
+  ) 
+
+#first let's solve for one single district
+data <- state_mostcombined %>% 
+  filter(racename == "Representative in State Legislature 1st District")
+  
+data <- data %>%
+  janitor::remove_empty(c("cols", "rows"))
+
+
+# second_col_name <- data %>%
+#   select(2) %>%
+#   names()
+
+
+#then use that second column name variable to do a conditional replace of the precinct name only in new column
+data <- data %>%
+  mutate(
+    testcol := if_else(is.na(!!sym(second_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
+    testcol = na_if(testcol, "replaceme")
+  )
+#now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
+data <- data %>%
+  tidyr::fill(testcol, .direction = "down")
+#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
+data <- data %>%
+  filter(precinct == "Total")
+#finally rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
+data <- data %>%
+  select(-precinct) %>%
+  rename(precinct = testcol) %>%
+  select(precinct, everything())
+
+
+
+
+
+
+
 processed_statehou17 <- read_excel(infile_string, sheet = "statehou17") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
@@ -109,22 +160,8 @@ processed_statehou17 <- read_excel(infile_string, sheet = "statehou17") %>%
 processed_statehou17
 
 
-## State House - B ####
-processed_statehou68 <- read_excel(infile_string, sheet = "statehou68") %>%  
-  mi_clean_embedded_precinct_names() %>% 
-  mi_format_column_names() %>% 
-  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("State House", "68")
 
 
-## State House - C ####
-processed_statehou56 <- read_excel(infile_string, sheet = "statehou56") %>%  
-  mi_clean_embedded_precinct_names() %>% 
-  mi_format_column_names() %>% 
-  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("State House", "56")
-
-processed_statehou56
 
 
 #there are also three special categories of votes: straight ticket votes, total registered voters and ballots cast
