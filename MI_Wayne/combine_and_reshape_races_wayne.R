@@ -10,7 +10,7 @@ library(precinctsopenelex) ## this is custom package developed for this process
 
 # create state and county name variables
 current_state <- "MI"
-current_county <- "Monroe"
+current_county <- "Wayne"
 
 # use custom package function to create input string to Excel file
 infile_string <- precinctsopenelex::create_infile_string(current_state, current_county)
@@ -58,14 +58,45 @@ processed_ussenate <- read_excel(infile_string, sheet = "ussenate") %>%
 processed_ussenate
 
 
-## Congressional - District ####
-processed_cd07 <- read_excel(infile_string, sheet = "cd07") %>%  
+## Congressional Districts ####
+processed_cd11 <- read_excel(infile_string, sheet = "cd11") %>%  
   mi_clean_embedded_precinct_names() %>% 
   mi_format_column_names() %>% 
   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("U.S. House", "07")
+  reshape_precinct_data("U.S. House", "11")
 
-processed_cd07
+processed_cd11
+
+
+processed_cd12 <- read_excel(infile_string, sheet = "cd12") %>%  
+  mi_clean_embedded_precinct_names() %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("U.S. House", "12")
+
+processed_cd12
+
+
+processed_cd13 <- read_excel(infile_string, sheet = "cd13") %>%  
+  mi_clean_embedded_precinct_names() %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("U.S. House", "13")
+
+processed_cd13
+
+
+processed_cd14 <- read_excel(infile_string, sheet = "cd14") %>%  
+  mi_clean_embedded_precinct_names() %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+  reshape_precinct_data("U.S. House", "14")
+
+processed_cd14
+
+
+
+
 
 
 ## State House ####
