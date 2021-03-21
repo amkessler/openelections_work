@@ -178,7 +178,8 @@ data <- data %>%
   mi_format_column_names() %>% 
   mutate(precinct = str_squish(precinct))
 
-#isolate the district number as a value to feed to reshaping function
+# isolate the district number as a value to feed to reshaping function
+# e.g. reshape_precinct_data("State House", "14")
 district_value <- data %>% 
   mutate(
     tempdist = gsub("[^0-9.-]", "", racename)
@@ -198,16 +199,6 @@ data_reshaped <- data %>%
 
 data_reshaped
 
-# mi_clean_embedded_precinct_names() %>% 
-#   mi_format_column_names() %>% 
-#   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-#   reshape_precinct_data("U.S. House", "14")
-
-
-#with data lined up horizontally in the "dems" rows, let's filter just them
-#pull out just dem marked rows with Ds and Rs
-data %>% 
-  filter(votecategory == "dem") %>% View()
 
 
 
@@ -216,30 +207,6 @@ data %>%
 
 
 #### CONTINUE HERE ######
-
-
-
-#finally rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
-data <- data %>%
-  select(-precinct) %>%
-  rename(precinct = testcol) %>%
-  select(precinct, everything())
-
-
-
-
-
-
-
-processed_statehou17 <- read_excel(infile_string, sheet = "statehou17") %>%  
-  mi_clean_embedded_precinct_names() %>% 
-  mi_format_column_names() %>% 
-  mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
-  reshape_precinct_data("State House", "17")
-
-processed_statehou17
-
-
 
 
 
