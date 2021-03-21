@@ -114,6 +114,7 @@ state_mostcombined <- state_mostcombined %>%
     votecategory = if_else(votecategory == "dem", "dem", "other")
   ) 
 
+
 #first let's solve for one single district
 data <- state_mostcombined %>% 
   filter(racename == "Representative in State Legislature 1st District")
@@ -122,23 +123,27 @@ data <- data %>%
   janitor::remove_empty(c("cols", "rows"))
 
 
-# second_col_name <- data %>%
-#   select(2) %>%
-#   names()
+second_col_name <- data %>%
+  select(4) %>%
+  names()
 
 
 #then use that second column name variable to do a conditional replace of the precinct name only in new column
 data <- data %>%
   mutate(
-    testcol := if_else(is.na(!!sym(second_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
+    testcol := if_else(is.na(!!sym(second_col_name)), Precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
     testcol = na_if(testcol, "replaceme")
   )
+
 #now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
 data <- data %>%
   tidyr::fill(testcol, .direction = "down")
-#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
+
+#now that we have the precinct name with every row, we can filter the DEM rows for just the "Total" counts we want
 data <- data %>%
-  filter(precinct == "Total")
+  filter(votecategory == "dem",
+         Precinct == "Total")
+
 #finally rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
 data <- data %>%
   select(-precinct) %>%
@@ -158,6 +163,9 @@ processed_statehou17 <- read_excel(infile_string, sheet = "statehou17") %>%
   reshape_precinct_data("State House", "17")
 
 processed_statehou17
+
+
+
 
 
 
