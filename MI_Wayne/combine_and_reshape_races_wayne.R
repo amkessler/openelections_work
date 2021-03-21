@@ -102,7 +102,7 @@ processed_cd14
 
 #load pre-processed sheet with all but 3 districts (those done separately below)
 state_mostcombined <- read_excel("MI_Wayne/MI_Wayne_GE20_cleaned.xlsx", 
-                                  sheet = "allstate_except_take2")
+                                  sheet = "allstate_except_manual")
 
 
 state_mostcombined %>% 
@@ -123,11 +123,15 @@ data <- data %>%
   janitor::remove_empty(c("cols", "rows")) %>% 
   clean_names()
 
+#with data lined up horizontally in the "dems" rows, let's filter just them
+#pull out just dem marked rows with Ds and Rs
+data %>% 
+  filter(votecategory == "dem") %>% View()
 
+#pull value of fourth column name
 fourth_col_name <- data %>%
   select(4) %>%
   names()
-
 
 #then use that fourth column name variable to do a conditional replace of the precinct name only in new column
 data <- data %>%
@@ -140,9 +144,29 @@ data <- data %>%
 data <- data %>%
   tidyr::fill(testcol, .direction = "down")
 
-#pull out just dem marked rows with Ds and Rs
+#now we need to pull the candidate names from the first row of data up to be the *column* names
 data %>% 
-  filter(votecategory == "dem") %>% View()
+  rename(!!paste0("cand_", .$x4[1]) := "x4")
+
+
+
+original <- tibble(value = c(1,2,4,6,7), month = 1:5, year = 2018)
+what_I_want <- tibble(indicator2018 = c(1,2,4,6,7), month = 1:5, year = 2018)
+
+original %>% 
+  rename(!!paste0("cand_", .$year[1]) := "value")
+
+original %>% 
+  rename(year[1] = "value")
+
+
+
+
+
+
+#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
+data <- data %>%
+  filter(precinct == "Total")
 
 
 
@@ -150,10 +174,7 @@ data %>%
 
 #### CONTINUE HERE ######
 
-#now that we have the precinct name with every row, we can filter the DEM rows for just the "Total" counts we want
-data <- data %>%
-  filter(votecategory == "dem",
-         Precinct == "Total")
+
 
 #finally rename our test column as "precinct" and remove the unneeded vote type total column, order remaining columns
 data <- data %>%
