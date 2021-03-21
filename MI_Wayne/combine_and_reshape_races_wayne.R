@@ -171,13 +171,32 @@ data <- data %>%
 
 data
 
+#now we're talking.
 
+#use package function to format the candidate name column headers
+data <- data %>% 
+  mi_format_column_names() %>% 
+  mutate(precinct = str_squish(precinct))
 
+#isolate the district number as a value to feed to reshaping function
+district_value <- data %>% 
+  mutate(
+    tempdist = gsub("[^0-9.-]", "", racename)
+  ) %>% 
+  distinct(tempdist) %>% 
+  pull()
 
-data %>% 
-  mi_clean_embedded_precinct_names()
-  
+#set office value for reshaping function
+office_value <- "State House"
 
+#remove racename column
+data <- data %>% 
+  select(-racename)
+
+data_reshaped <- data %>% 
+  reshape_precinct_data(office_value, district_value)
+
+data_reshaped
 
 # mi_clean_embedded_precinct_names() %>% 
 #   mi_format_column_names() %>% 
