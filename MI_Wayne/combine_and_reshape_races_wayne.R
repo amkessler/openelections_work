@@ -25,7 +25,7 @@ infile_string
 
 # 2)
 # We'll then run the column renaming function mi_format_column_names() as well 
-# (Turns "Candidate (PTY)" into "Candiate - PTY")
+# (Turns "Candidate (PTY)" into "Candidate - PTY")
 
 # 3)
 # Then run the main reshaping function from the package to convert to long/tidy format and add standard openelex columns
