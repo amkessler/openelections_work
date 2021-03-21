@@ -105,23 +105,29 @@ state_mostcombined <- read_excel("MI_Wayne/MI_Wayne_GE20_cleaned.xlsx",
                                   sheet = "allstate_except_manual")
 
 
-state_mostcombined %>% 
-  count(votecategory)
+state_mostcombined 
 
-#let's collapse the two non-dem "other" designations into one variable
-state_mostcombined <- state_mostcombined %>% 
-  mutate(
-    votecategory = if_else(votecategory == "dem", "dem", "other")
-  ) 
+#aim to split up combined df into multiple dfs, one for each district
+state_mostcombined
+
+split_df <- split(state_mostcombined, state_mostcombined$breakvalue, drop = TRUE)
+split_df
+split_df[[1]] 
+split_df[[2]] 
 
 
 #first let's solve for one single district
-data <- state_mostcombined %>% 
-  filter(racename == "Representative in State Legislature 1st District")
+data <- split_df[[1]] 
   
+data
+
+#clean out empty rows and columns, and turn first row of data where candidates are into column names
 data <- data %>%
   janitor::remove_empty(c("cols", "rows")) %>% 
-  clean_names()
+  janitor::row_to_names(1) #replace column names with first row, where candidates are listed
+
+
+
 
 #with data lined up horizontally in the "dems" rows, let's filter just them
 #pull out just dem marked rows with Ds and Rs
