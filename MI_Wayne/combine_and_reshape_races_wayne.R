@@ -126,7 +126,63 @@ data <- data %>%
   janitor::remove_empty(c("cols", "rows")) %>% 
   janitor::row_to_names(1) #replace column names with first row, where candidates are listed
 
+#take out unneeded columns
+data <- data %>% 
+  select(
+    -1,
+    -votecategory,
+    -`Total Votes`
+  ) %>% 
+  rename(
+    precinct = candnamerow
+  )
 
+data
+
+#pull value of third column name
+third_col_name <- data %>%
+  select(3) %>%
+  names()
+
+#then use that column name variable to do a conditional replace of the precinct name only in new column
+data <- data %>%
+  mutate(
+    testcol := if_else(is.na(!!sym(third_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
+    testcol = na_if(testcol, "replaceme")
+  )
+
+data
+
+#now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
+data <- data %>%
+  tidyr::fill(testcol, .direction = "down")
+
+
+#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
+data <- data %>%
+  filter(precinct == "Total")
+
+#now we'll replace the precinct value with the precinct info captured in testcol
+data <- data %>% 
+  mutate(
+    precinct = testcol
+  ) %>% 
+  select(-testcol)
+
+data
+
+
+
+
+data %>% 
+  mi_clean_embedded_precinct_names()
+  
+
+
+# mi_clean_embedded_precinct_names() %>% 
+#   mi_format_column_names() %>% 
+#   mutate(precinct = str_squish(precinct)) %>% #to deal with line breaks in names
+#   reshape_precinct_data("U.S. House", "14")
 
 
 #with data lined up horizontally in the "dems" rows, let's filter just them
@@ -134,45 +190,7 @@ data <- data %>%
 data %>% 
   filter(votecategory == "dem") %>% View()
 
-#pull value of fourth column name
-fourth_col_name <- data %>%
-  select(4) %>%
-  names()
 
-#then use that fourth column name variable to do a conditional replace of the precinct name only in new column
-data <- data %>%
-  mutate(
-    testcol := if_else(is.na(!!sym(fourth_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
-    testcol = na_if(testcol, "replaceme")
-  )
-
-#now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
-data <- data %>%
-  tidyr::fill(testcol, .direction = "down")
-
-#now we need to pull the candidate names from the first row of data up to be the *column* names
-data %>% 
-  rename(!!paste0("cand_", .$x4[1]) := "x4")
-
-
-
-original <- tibble(value = c(1,2,4,6,7), month = 1:5, year = 2018)
-what_I_want <- tibble(indicator2018 = c(1,2,4,6,7), month = 1:5, year = 2018)
-
-original %>% 
-  rename(!!paste0("cand_", .$year[1]) := "value")
-
-original %>% 
-  rename(year[1] = "value")
-
-
-
-
-
-
-#now that we have the precinct name with every row, we can filter for just the "Total" counts we want
-data <- data %>%
-  filter(precinct == "Total")
 
 
 
