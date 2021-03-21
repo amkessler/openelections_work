@@ -120,24 +120,35 @@ data <- state_mostcombined %>%
   filter(racename == "Representative in State Legislature 1st District")
   
 data <- data %>%
-  janitor::remove_empty(c("cols", "rows"))
+  janitor::remove_empty(c("cols", "rows")) %>% 
+  clean_names()
 
 
-second_col_name <- data %>%
+fourth_col_name <- data %>%
   select(4) %>%
   names()
 
 
-#then use that second column name variable to do a conditional replace of the precinct name only in new column
+#then use that fourth column name variable to do a conditional replace of the precinct name only in new column
 data <- data %>%
   mutate(
-    testcol := if_else(is.na(!!sym(second_col_name)), Precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
+    testcol := if_else(is.na(!!sym(fourth_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
     testcol = na_if(testcol, "replaceme")
   )
 
 #now, we'll use tidyr's fill() function to fill down each name through the NAs until it hits a new one
 data <- data %>%
   tidyr::fill(testcol, .direction = "down")
+
+#pull out just dem marked rows with Ds and Rs
+data %>% 
+  filter(votecategory == "dem") %>% View()
+
+
+
+
+
+#### CONTINUE HERE ######
 
 #now that we have the precinct name with every row, we can filter the DEM rows for just the "Total" counts we want
 data <- data %>%
