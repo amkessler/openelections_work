@@ -284,20 +284,24 @@ list_sequence
 
 
 # **use map to loop through the variations and apply the function **
-statehouse_combined_reshaped <- map_df(list_sequence, split_process_statedistrict)
+processed_statehouse_combined <- map_df(list_sequence, split_process_statedistrict)
 
-statehouse_combined_reshaped
+processed_statehouse_combined
 
 #deal with 4th district special elex labeling
-statehouse_combined_reshaped <- statehouse_combined_reshaped %>% 
+processed_statehouse_combined <- processed_statehouse_combined %>% 
   mutate(
     district = if_else(district == "401012021", "4 - Partial Term Ending Jan 1", district)
   )
 
-statehouse_combined_reshaped %>% 
+processed_statehouse_combined %>% 
   count(district)
 
-
+#format votes column as numeric
+processed_statehouse_combined <- processed_statehouse_combined %>% 
+  mutate(
+    votes = as.numeric(votes)
+  )
 
 
 
