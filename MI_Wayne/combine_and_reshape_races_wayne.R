@@ -205,9 +205,9 @@ data_reshaped
 # We'll turn the above worked-through code into a function to then apply to all
 # house districts in the table.
 
-split_process_statedistrict <- function(split_df_list, list_position_num) {
+split_process_statedistrict <- function(list_position_num) {
   #first let's solve for one single district
-  data <- split_df_list[[list_position_num]] 
+  data <- split_df[[list_position_num]] 
   #clean out empty rows and columns, and turn first row of data where candidates are into column names
   data <- data %>%
     janitor::remove_empty(c("cols", "rows")) %>% 
@@ -270,9 +270,33 @@ split_process_statedistrict <- function(split_df_list, list_position_num) {
 
 
 #run the function
-split_process_statedistrict(split_df_list = split_df, list_position_num = 1)
+split_process_statedistrict(list_position_num = 1)
 
 #success!
+
+#run function for ALL the items on the list - i.e. for all the districts ####
+
+#how many dataframes included in our list?
+list_length <- length(split_df)
+#create sequence of numbers to feed to function
+list_sequence <- seq(list_length)
+list_sequence
+
+
+# **use map to loop through the variations and apply the function **
+statehouse_combined_reshaped <- map_df(list_sequence, split_process_statedistrict)
+
+statehouse_combined_reshaped
+
+#deal with 4th district special elex labeling
+statehouse_combined_reshaped <- statehouse_combined_reshaped %>% 
+  mutate(
+    district = if_else(district == "401012021", "4 - Partial Term Ending Jan 1", district)
+  )
+
+statehouse_combined_reshaped %>% 
+  count(district)
+
 
 
 
