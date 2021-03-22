@@ -201,6 +201,78 @@ data_reshaped
 
 
 
+##### CREATING A FUNCTION FROM THE STATE HOUSE PROCESSING STEPS ####
+# We'll turn the above worked-through code into a function to then apply to all
+# house districts in the table.
+
+split_process_statedistrict <- function(split_df_list, list_position_num) {
+  #first let's solve for one single district
+  data <- split_df_list[[list_position_num]] 
+  #clean out empty rows and columns, and turn first row of data where candidates are into column names
+  data <- data %>%
+    janitor::remove_empty(c("cols", "rows")) %>% 
+    janitor::row_to_names(1) #replace column names with first row, where candidates are listed
+  #take out unneeded columns
+  data <- data %>% 
+    select(
+      -1,
+      -votecategory,
+      -`Total Votes`
+    ) %>% 
+    rename(
+      precinct = candnamerow
+    )
+  #pull value of third column name
+  third_col_name <- data %>%
+    select(3) %>%
+    names()
+  #use column name variable to do a conditional replace of the precinct name only in new column
+  data <- data %>%
+    mutate(
+      testcol := if_else(is.na(!!sym(third_col_name)), precinct, "replaceme"), #need to use tidyeval !! here with sym to use variable name
+      testcol = na_if(testcol, "replaceme")
+    )
+  #use tidyr's fill() function to fill down each name through the NAs until it hits a new one
+  data <- data %>%
+    tidyr::fill(testcol, .direction = "down")
+  #filter for just the "Total" counts 
+  data <- data %>%
+    filter(precinct == "Total")
+  #replace the precinct value with the precinct info captured in testcol
+  data <- data %>% 
+    mutate(
+      precinct = testcol
+    ) %>% 
+    select(-testcol)
+  #use package function to format the candidate name column headers
+  data <- data %>% 
+    mi_format_column_names() %>% 
+    mutate(precinct = str_squish(precinct))
+  # isolate the district number as a value to feed to reshaping function
+  # e.g. reshape_precinct_data("State House", "14")
+  district_value <- data %>% 
+    mutate(
+      tempdist = gsub("[^0-9.-]", "", racename)
+    ) %>% 
+    distinct(tempdist) %>% 
+    pull()
+  #set office value for reshaping function (this will always be same, since all st house dists)
+  office_value <- "State House"
+  #remove racename column
+  data <- data %>% 
+    select(-racename)
+  data_reshaped <- data %>% 
+    reshape_precinct_data(office_value, district_value)
+  
+  return(data_reshaped)
+
+}
+
+
+#run the function
+split_process_statedistrict(split_df_list = split_df, list_position_num = 1)
+
+#success!
 
 
 
