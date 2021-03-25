@@ -102,7 +102,7 @@ processed_cd14
 
 #load pre-processed sheet with all but 3 districts (those done separately below)
 state_mostcombined <- read_excel("MI_Wayne/MI_Wayne_GE20_cleaned.xlsx", 
-                                  sheet = "allstate_except_manual")
+                                  sheet = "allstate_all_manual")
 
 
 state_mostcombined 
@@ -295,7 +295,7 @@ processed_statehouse_combined <- processed_statehouse_combined %>%
   )
 
 processed_statehouse_combined %>% 
-  count(district)
+  count(district) 
 
 #format votes column as numeric
 processed_statehouse_combined <- processed_statehouse_combined %>% 
@@ -307,9 +307,6 @@ processed_statehouse_combined <- processed_statehouse_combined %>%
 
 
 #### CONTINUE HERE ######
-
-
-
 
 
 
@@ -368,7 +365,7 @@ processed_combined %>%
 
 #check districts
 processed_combined %>% 
-  count(office, district)
+  count(office, district) %>% View()
 
 #check candidates
 processed_combined %>% 
